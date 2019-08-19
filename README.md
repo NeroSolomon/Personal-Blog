@@ -14,3 +14,6 @@
 
 ## react-create-app
 [笔记/项目地址](https://github.com/NeroSolomon/react-app)
+
+## Ghost 博客系统
+[笔记/项目地址](https://github.com/NeroSolomon/Ghost-Blog)
