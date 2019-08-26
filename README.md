@@ -17,3 +17,10 @@
 
 ## Ghost 博客系统
 [笔记/项目地址](https://github.com/NeroSolomon/Ghost-Blog)
+
+## webpack
+[笔记](./webpack/webpack配置.md)<br>
+[遇到的问题及解决方法](./webpack/webpack问题及解决.md)
+
+## JS的一些思考
+[笔记](./js/js一些问题的思考.md)
