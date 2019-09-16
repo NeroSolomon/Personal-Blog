@@ -34,3 +34,12 @@ function ObjectFactory() {
   return obj; // 返回新对象
 }
 ```
+
+### 如何判断客户端
+移动端：isMobile: ("ontouchstart" in window || navigator.msMaxTouchPoints) ? true : false<br>
+其他：利用navigator.userAgent并使用正则匹配看看有没有客户端信息，例：
+```
+let ua = navigator.userAgent;
+
+isWechat: /micromessenger/gi.test(ua)
+```
