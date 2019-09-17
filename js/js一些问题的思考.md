@@ -43,3 +43,50 @@ let ua = navigator.userAgent;
 
 isWechat: /micromessenger/gi.test(ua)
 ```
+
+### 手动实现call\apply\bind
+call
+```
+Function.prototype.myCall = function (context) {
+  context.fn = this; // 获取函数
+
+  const args = arguments.slice(1); // 获取参数
+  const result = context.fn(...args); // 调用函数
+  delete context.fn; // 删除
+  return result; // 返回结果
+}
+```
+
+apply
+```
+Function.prototype.myApply = function(context) {
+  context.fn = this; // 获取函数，并通过context绑定this
+
+  let result;
+  if (arguments[1]) { // 判断是否存在第二个参数
+    result = context.fn(...arguments[1])；
+  } else {
+    result = context.fn()
+  }
+  delete context.fn; // 删除
+  return reslut;
+}
+```
+
+call
+```
+Function.prorotype.myCall = function(context) {
+  const _this = this;
+  let args = arguments.slice(1);
+
+  return function F() {
+    if (this instanceof F) { // 假如是构造函数的调用方式
+      return new _this(..args, ...arguments);
+    }
+    return _this.apply(context, args.concat(arguments));
+  }
+}
+```
+
+### arguments是数组吗？
+不是数组，是类数组，有length属性，可以使用下标取值，可以使用：[...arguments]、Array.prototype.slice.call(arguments)和Array.from(arguments)
