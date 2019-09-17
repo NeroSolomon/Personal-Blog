@@ -90,3 +90,9 @@ Function.prorotype.myCall = function(context) {
 
 ### arguments是数组吗？
 不是数组，是类数组，有length属性，可以使用下标取值，可以使用：[...arguments]、Array.prototype.slice.call(arguments)和Array.from(arguments)
+
+### this的分类
+1.window<br>
+2.调用函数的对象<br>
+3.构造函数指向新的对象<br>
+4.call\apply\bind改变指向的对象
