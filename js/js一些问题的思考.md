@@ -96,3 +96,36 @@ Function.prorotype.myCall = function(context) {
 2.调用函数的对象<br>
 3.构造函数指向新的对象<br>
 4.call\apply\bind改变指向的对象
+
+### js模块化
+AMD require.js<br>
+CMD sea.js<br>
+es Module <br>
+commom.js node服务端<br>
+
+### 什么是事件循环
+1.js是单线程的，任务只能在主线程中按顺序执行<br>
+2.为了异步IO不阻塞主线程，js将异步任务挂到任务队列中，先执行同步代码<br>
+3.等主线程中的同步代码执行完，才执行任务队列中的异步代码<br>
+4.异步代码分为微任务和宏任务，例如promise就是微任务，setTimeout就是宏任务，先执行微任务，再执行宏任务<br>
+
+### 获取图片的原始宽高
+原始宽高：不受外部设置宽高影响，image.naturalWidth和image.naturalHeight
+
+### 浏览器的动画最小间隔
+1000ms/60FPS = 1.667ms
+
+### == 类型转换规则
+null == undefined //不转换<br>
+null\undefined == 其余非null\undefined // false<br>
+原始类型 == 对象 // 原始类型转换为数字。对象转为对应的原始类型，如果是date对象先使用toString方法，再用valueOf，否则相反，接着再转换为数字<br>
+原始类型 == 原始类型 // 转换为数字<br>
+例：
+```
+![] == []
+// 首先!优先级比==高，上式转为false == []
+// 然后false转为数值Number(false) = 0
+// []先调用valueOf()得到[]，无法比较，然后使用toSting得到""
+// 所以式子变成 0（原始类型）== ""（原始类型），Number("") = 0
+// 所以结果为true
+```

@@ -10,7 +10,8 @@
 [npm遇到问题及解决方法](./npm/遇到的问题及解决方法.md)
 
 ## git
-[git报错及解决](./git/git报错及解决.md)
+[git报错及解决](./git/git报错及解决.md)<br>
+[github托管](./git/github托管.md)
 
 ## react-create-app
 [笔记/项目地址](https://github.com/NeroSolomon/react-app)
