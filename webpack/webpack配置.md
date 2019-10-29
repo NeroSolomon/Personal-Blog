@@ -83,5 +83,41 @@ output: {
   publicPath: isDev ? '/' : '/dist/'
 },
 ```
-5.由于根目录是src目录，所以记得index.html里要手动引入bundle.js，正式构建的时侯写个脚本把手动引入的script删除<br>
+5.由于根目录是src目录，所以记得index.html里要手动引入bundle.js，正式构建的时侯写个插件把手动引入的script删除<br>
 这里踩了一个很大的坑，我在webpack配置里使用了splitChunks，导致打包出来的js文件有多个，但是我只引入了bundle.js，所以加入的代码就死活不能执行<br>
+
+## webpack自定义插件
+1.创建插件js文件，这里使用html-webpack-plugin来作为例子，因为上面提到写插件来删除script标签，其他生命钩子请按需查询
+```javascript
+  function updateIndexHTML() {
+    // ...
+  }
+
+  updateIndexHTML.prototype.apply = function(compiler) {
+    compiler.plugin('compilation', function(compilation) {
+      // Hook into html-webpack-plugin event
+      // webpack 3 or 4
+      compilation.plugin('html-webpack-plugin-before-html-processing', function(pluginData) {
+        pluginData.html = pluginData.html + 'Hello world'
+      });
+
+      // webpack 4
+      // compilation.hooks.htmlWebpackPluginBeforeHtmlProcessing.tapAsync(pluginName, (htmlPluginData, callback) => {
+      //   htmlPluginData.html += 'Hello world';
+      //   callback(null, htmlPluginData);
+      // });
+    });
+  };
+
+  module.exports = updateIndexHTML;
+```
+
+2.在webpack配置文件中引入，并直接通过new来使用
+```javascript
+
+const updateIndexHTML = require('./tools/update-index-html.js');
+
+return {
+  plugins: [new updateIndexHTML()]
+}
+```
