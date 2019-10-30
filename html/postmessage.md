@@ -5,7 +5,7 @@ a.html
 <html>
 <head>
     <meta charset="utf-8">
-    <title>42度空间-window.postMessage()跨域消息传递</title>
+    <title>外部html</title>
 </head>
 <body>
 <div>
@@ -36,7 +36,7 @@ b.html
 <html>
 <head>
     <meta charset="utf-8">
-    <title>42度空间-从www.42du.cn接收消息</title>
+    <title>内嵌的html</title>
 </head>
 <body>
 <div id="message">
