@@ -121,3 +121,6 @@ return {
   plugins: [new updateIndexHTML()]
 }
 ```
+
+## css modules：能够对css进行模块化打包，防止css样式污染全局
+其实就是在css-loader后加参数，例如use: 'css-loader?modules'

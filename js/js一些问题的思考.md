@@ -129,3 +129,20 @@ null\undefined == 其余非null\undefined // false<br>
 // 所以式子变成 0（原始类型）== ""（原始类型），Number("") = 0
 // 所以结果为true
 ```
+
+## 函数防抖
+```javascript
+function debounce(fun, ms) {
+  let timer;
+  return function() {
+    const context = this;
+    const args = arguments;
+
+    if (timer) clearTimeout(timer);
+
+    timer = setTimeout(() => {
+      fun.apply(context, args)
+    }, ms)
+  }
+}
+```
