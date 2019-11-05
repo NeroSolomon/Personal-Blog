@@ -122,5 +122,16 @@ return {
 }
 ```
 
-## css modules：能够对css进行模块化打包，防止css样式污染全局
+## css modules：（:global()）能够对css进行模块化打包，防止css样式污染全局
 其实就是在css-loader后加参数，例如use: 'css-loader?modules'
+
+## less modifyVars：antd主题设置
+例如:
+```javascript
+const theme = {
+  'primary-color': '#1DA57A',
+  'link-color': '#1DA57A'
+}
+
+// 在lessloader的处理中加入use: {options: { modifyVars: theme}}
+```
