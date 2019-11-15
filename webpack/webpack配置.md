@@ -44,6 +44,7 @@ const getConfig = require('./../webpack.config.fn.js');
 
 const config = getConfig();
 const compiler = webpack(config);
+// 此处的compiler是webpack的核心，其有很多api，例如compiler.run()就会安装config构建生产目录
 
 browserSync.init({
   port: 3000,
@@ -135,3 +136,5 @@ const theme = {
 
 // 在lessloader的处理中加入use: {options: { modifyVars: theme}}
 ```
+
+## html-loader，可以在html中使用${require('html-loader!./xxx.html')} 引入html，webpack就会对这个html进行编译

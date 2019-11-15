@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .left {
+            float: left;
+            background:rosybrown;
+        }
+        .right {
+            float: right;
+            background: royalblue;
+        }
+        .left,.right {
+            width: 200px;
+        }
+        .center {
+            float: left;
+            background-color: aqua;
+        }
+    </style>
+    <!-- <style>
+      .container {
+          overflow: hidden;
+      }
+      .left,.right {
+          padding-bottom: 9999px;
+          margin-bottom: -9999px;
+          width: 200px;
+      }
+      .center {
+          background-color: aqua;
+          padding-bottom: 9999px;
+          margin-bottom: -9999px;
+      }
+      </style> -->
+      <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+        }
+        .left {
+            width: 200px;
+            background: #f00;
+        }
+        .right {
+            width: 200px;
+            background: #f0f;
+        }
+        .center {
+            flex: 1;
+            background: #00f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">left</div>
+        <div class="right">right</div>
+        <div class="center">
+            1
+            <br>
+            2
+            <br>
+            3
+            <br>
+            4
+            <br>
+            5
+            <br>
+        </div>
+    </div>
+</body>
+</html>

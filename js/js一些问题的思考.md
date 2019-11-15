@@ -146,3 +146,9 @@ function debounce(fun, ms) {
   }
 }
 ```
+
+## promise、generator、和async的关系
+1.promise是为了解决异步函数回调地狱的问题<br>
+2.generator是为了解决promise then语法语义差的问题<br>
+3.async是为了解决generator自动执行yield语句的问题，使得异步代码能够同步执行，但是注意await的操作必须要返回一个promise对象，不然不能起等待作用<br>
+4.总结：promise、generator、async是一个递进的关系，解决前者的痛点
