@@ -1,0 +1,19 @@
+<div id="diagramContainer">
+  <div id="item_left" class="item"></div>
+  <div id="item_right" class="item" style="margin-left:50px;"></div>
+</div>
+<script src="https://cdn.bootcss.com/jsPlumb/2.6.8/js/jsplumb.min.js"></script>
+
+<script>
+  /* global jsPlumb */
+  jsPlumb.ready(function () {
+    jsPlumb.connect({
+      source: 'item_left',
+      target: 'item_right',
+      endpoint: 'Dot'
+    })
+  })
+
+  jsPlumb.draggable('item_left')
+  jsPlumb.draggable('item_right')
+</script>
