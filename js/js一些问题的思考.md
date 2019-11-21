@@ -152,3 +152,5 @@ function debounce(fun, ms) {
 2.generator是为了解决promise then语法语义差的问题<br>
 3.async是为了解决generator自动执行yield语句的问题，使得异步代码能够同步执行，但是注意await的操作必须要返回一个promise对象，不然不能起等待作用<br>
 4.总结：promise、generator、async是一个递进的关系，解决前者的痛点
+
+## promise 每个promise中return的新promise对象，或者resolve中传进的参数，都是紧接着后面.then()中的参数。
