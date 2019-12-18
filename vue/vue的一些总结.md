@@ -12,3 +12,48 @@
       a.加重服务端的负担<br>
       b.只能执行到Mounted的生命钩子<br>
 4.参考网址：[参考](https://www.jianshu.com/p/10b6074d772c)
+
+### vue中，如果在实例创建之后添加新的属性到实例上，它不会触发视图更新
+```
+<template>
+     <div>
+      <p @click="addd(obj)">{{obj.d}}</p>
+      <p @click="adde(obj)">{{obj.e}}</p>
+      </div>
+</template>
+
+<script>
+  export default {
+      data(){
+            return {
+                  obj:{}
+            }
+      },
+      mounted() {
+            this.obj = {d: 0};
+            this.obj.e = 0;
+            console.log('after--', this.obj);
+      },
+      methods: {
+            addd(item) {
+                  item.d = item.d + 1;
+                  console.log('item--',item);
+            },
+            adde(item) {
+                  item.e = item.e + 1;
+                  console.log('item--',item);
+            }
+      }
+  }
+</scirpt>
+```
+
+在上面例子中由于e是在实例创建之后新增的属性，所以adde方法被调用后，视图不会被更新，但在控制台中可以发现e更新了<br>
+虽然Vue 不允许在已经创建的实例上动态添加新的根级响应式属性 (root-level reactive property)。然而它可以使用 Vue.set(object, key, value) 方法将响应属性添加到嵌套的对象上：
+```
+mounted() {
+      this.obj = {d: 0};
+      this.$set(this.obj, 'e', 0);
+      console.log('after--', this.obj);
+}
+```
