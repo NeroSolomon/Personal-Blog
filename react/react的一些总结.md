@@ -36,3 +36,10 @@ const App = (location, callback) => {
 
 现在构建项目，你会发现你的项目加载资源是通过路由动态加载了<br>
 参考网址:[https://github.com/eyasliu/blog/issues/8](https://github.com/eyasliu/blog/issues/8)
+
+### 在jsx中的标签上计算，动态添加属性
+```jsx
+<span
+  {...('cn' == locale ? { className: style['f-wsn'] } : {})}
+></span>
+```
