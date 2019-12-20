@@ -138,3 +138,25 @@ const theme = {
 ```
 
 ## html-loader，可以在html中使用${require('html-loader!./xxx.html')} 引入html，webpack就会对这个html进行编译
+
+## output.chunkFilename
+```javascript
+module.exports = {
+    entry: {
+        "index": "pages/index.jsx"
+    },
+    output: {
+        filename: "[name].min.js",
+        chunkFilename: "[name].min.js"
+    }
+}
+
+```
+1.在entry中引入的js会按照output.filename命名，但如果是异步引入的就会使用output.chunkFilename来命名
+```javascript
+require.ensure(["modules/tips.jsx"], function(require) {
+    var a = require("modules/tips.jsx");
+    // ...
+}, 'tips');
+```
+2.如果传入第三个参数，就会按照第三个参数来命名：tips.min.js，否则就是一个自动分配的name
