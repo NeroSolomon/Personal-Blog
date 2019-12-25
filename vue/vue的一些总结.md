@@ -57,3 +57,80 @@ mounted() {
       console.log('after--', this.obj);
 }
 ```
+
+### 在vue中如果要监听组件的原生事件，需要用.native, 例如@keypress.mative
+
+### 自定义指令
+```javascript
+// 注册一个全局自定义指令 `v-focus`
+Vue.directive('focus', {
+  // 当被绑定的元素插入到 DOM 中时……
+  inserted: function (el) {
+    // 聚焦元素
+    el.focus()
+  }
+})
+
+// 局部指令
+directives: { 
+    focus: { 
+        // 指令的定义
+        inserted: function (el) {
+            el.focus() 
+        }
+    }
+}
+
+// 然后你可以在模板中任何元素上使用新的 v-focus 属性，如下：
+<input v-focus>
+```
+
+### v-model
+```javascript
+// v-modal实际是使用了一个名为value的prop，和监听input事件（但像单选框、复选框等类型的输入控件可能会将value特性用于不同的目的，这时候就需要使用model属性来解决）
+
+// text
+Vue.component('base-text', {
+  props: {
+    value: String
+  },
+  template: `
+    <input
+      type="text"
+      v-bind:value="value"
+      v-on:change="$emit('input', $event.target.value)"
+    >
+  `
+})
+
+<base-text v-model="value"></base-text>
+
+// checkbox
+Vue.component('base-checkbox', {
+  model: {
+    prop: 'checked',
+    event: 'change'
+  },
+  props: {
+    checked: Boolean
+  },
+  template: `
+    <input
+      type="checkbox"
+      v-bind:checked="checked"
+      v-on:change="$emit('change', $event.target.checked)"
+    >
+  `
+})
+
+// react中是在组件中保留了value和onchange的props
+```
+
+### 作用域插槽，用于子组件向父组件传值
+```javascript
+// 子组件绑定数据
+<slot name="test" v-bind="data"></slot>
+
+<template v-slot:test="data">{{ data }}</template>
+// 在父组件中可以拿到子组件绑定的数据
+```

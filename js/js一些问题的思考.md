@@ -154,3 +154,25 @@ function debounce(fun, ms) {
 4.总结：promise、generator、async是一个递进的关系，解决前者的痛点
 
 ## promise 每个promise中return的新promise对象，或者resolve中传进的参数，都是紧接着后面.then()中的参数。
+
+## js获得黏贴内容
+```javascript
+// 监听paste事件
+onPaste(e) {
+  const that = this
+  if (!e) return
+  if (e.clipboardData) {
+    for (let i = 0, len = e.clipboardData.items.length; i < len; i++) {
+      const item = e.clipboardData.items[i]
+      if (item.kind === 'string') {
+        item.getAsString(function(str) {
+          that.pasteText = str
+        })
+      }
+    }
+  } else if (window.clipboardData) {
+    const str = window.clipboardData.getData('Text')
+    this.pasteText = str
+  }
+}
+```
