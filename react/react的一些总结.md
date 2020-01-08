@@ -43,3 +43,6 @@ const App = (location, callback) => {
   {...('cn' == locale ? { className: style['f-wsn'] } : {})}
 ></span>
 ```
+
+### 组件预加载
+[react-loadable](https://github.com/jamiebuilds/react-loadable#preloading)
