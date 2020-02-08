@@ -134,3 +134,31 @@ Vue.component('base-checkbox', {
 <template v-slot:test="data">{{ data }}</template>
 // 在父组件中可以拿到子组件绑定的数据
 ```
+
+### 监听vue全局错误 vue.config.errorHandler
+```javascript
+Vue.config.errorHandler = function (err, vm, info) {
+  console.error('error---', err)
+  console.info('vm---', vm)
+  console.info('info---', info)
+}
+```
+
+### created，已实例化，但还没有挂载，也就是html还没渲染
+
+### mounted，已完成挂载，html完成渲染
+
+### vuex mapState，可以将state里面的属性快速映射成computed属性
+```javascript
+computed: {
+  ...mapState({
+    // 箭头函数可使代码更简练
+    count: state => state.count
+  })
+}
+
+// 或者计算属性和state的属性名一致的话，可以直接给字符串
+computed: {
+  ...mapState(['count'])
+}
+```

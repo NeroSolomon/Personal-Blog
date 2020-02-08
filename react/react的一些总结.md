@@ -46,3 +46,6 @@ const App = (location, callback) => {
 
 ### 组件预加载
 [react-loadable](https://github.com/jamiebuilds/react-loadable#preloading)
+
+### react错误捕获
+componentDidCatch(error, info)，一个生命钩子函数，可以捕获当前组件下组件树任何位置暴露的问题
