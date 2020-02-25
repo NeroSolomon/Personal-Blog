@@ -10,7 +10,9 @@ output: {
   publicPath: '/dist/'
 }
 ```
-在服务器上，默认读取目录是项目的根目录，但资源文件是打包在dist下，包括index.html，而index.html和js、css文件在同目录下，所以在index.html中会以“/js”，"/css"的方式引用资源，但根目录是dist所在目录，所以服务器会找不到资源，publicPath实际上就是告诉服务器资源在哪里<br>
+在服务器上，默认读取目录是项目的根目录，但资源文件是打包在dist下，包括index.html，而index.html和js、css文件在同目录下，所以在index.html中会以“/js”，"/css"的方式引用资源，但根目录是dist所在目录，所以服务器会找不到资源，publicPath实际上就是资源目录前缀： src="/dist/js"<br>
+
+
 
 但如果你的资源不是放到dist的话：<br>
 1.当我们按照以上配置构建项目时，所有资源文件就会打包到dist文件夹中<br>

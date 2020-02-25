@@ -63,7 +63,7 @@ async function f() {
   return 'hello world'; // 和return await 'hello world'一样
 }
 
-// return的值会变成then中函数的参数
+// return的值会变成then中函数的参数，证明return回来的是一个promise实例
 f().then(v => console.log(v))
 ```
 通过async函数可以不用co、thunk等插件，使得异步代码可以按顺序一条条执行
