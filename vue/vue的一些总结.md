@@ -162,3 +162,39 @@ computed: {
   ...mapState(['count'])
 }
 ```
+
+### .sync语法糖，是为了能够让子组件更方便地改变父组件的值，其实和原本的emit方式一样
+```javascript
+//普通写法
+<text-document
+    v-bind:title="title"
+    v-on:update:title="title = $event"
+/>
+
+//语法糖写法
+<text-document   
+	v-bind:title.sync="title"  
+/>
+  
+Vue.component('text-document', { 
+  props: ['title'], 
+  template: `
+    <div> 
+      <button @click='setNewTitle'>更新标题</button>
+    </div>
+  `,
+  methods:{
+   setNewTitle:function(){
+       //手动进行更新父组件中的值
+       this.$emit('update:title', 'new title')
+    } 
+  }
+})
+
+var vm = new Vue({
+  el:'#app',
+  data:{
+     title:'old title'
+  }, 
+});
+```

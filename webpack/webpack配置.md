@@ -162,3 +162,21 @@ require.ensure(["modules/tips.jsx"], function(require) {
 }, 'tips');
 ```
 2.如果传入第三个参数，就会按照第三个参数来命名：tips.min.js，否则就是一个自动分配的name
+
+## html-webpack-plugin
+templateParameters: 通过变量覆盖模版html的值
+```js
+new HtmlWebpackPlugin({
+  favicon: './src/favicon.ico',
+  filename: `${__dirname}/dist/index.html`,
+  template: `${__dirname}/src/index.html`,
+  inject: true,
+  templateParameters: {
+    version: version
+  }
+})
+```
+
+```html
+<html lang="en" data-version="<%= version %>"></html>
+```
