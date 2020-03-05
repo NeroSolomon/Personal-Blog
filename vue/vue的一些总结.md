@@ -198,3 +198,38 @@ var vm = new Vue({
   }, 
 });
 ```
+
+## vue中的update方法
+update会在data的数据发生变化的时候被触发，所以重复给data里面的属性赋同样的值不会触发update，<br>
+但没有相同引用的对象都是不相等的，所以赋值对象的话，无论对象是否一致，都会触发update
+```javascript
+'string' == 'string' // true
+{ a: 1 } == { a: 1 } // false
+```
+
+所以：
+```vue
+<template>
+  <div id="app">
+    {{ message }}
+    {{ obj.a }}
+    <button @click="message = 'new string'">change string<button>
+    <button @click="obj = { a: 1 }">change obj<button>
+  </div>
+</template>
+
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: 'old string',
+      obj: { a: 1 }
+    },
+    updated() {
+      console.log('update')
+    }
+  })
+</script>
+// change string只会触发一次update，后面因为值都相等，所以就不会触发update了
+// change obj每一次都会触发update
+```
