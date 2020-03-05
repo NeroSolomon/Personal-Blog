@@ -155,6 +155,38 @@ function debounce(fun, ms) {
 
 ## promise 每个promise中return的新promise对象，或者resolve中传进的参数，都是紧接着后面.then()中的参数。
 
+## Promise.all
+可以同时执行多个promise，然后会return一个promise对象，执行then可以获得所有promise的执行结果，执行结果按顺序存在then的参数中
+```javascript
+const promise1 = Promise.resolve(3);
+const promise2 = 42;
+const promise3 = new Promise(function(resolve, reject) {
+  setTimeout(resolve, 100, 'foo');
+});
+
+Promise.all([promise1, promise2, promise3]).then(function(values) {
+  console.log(values);
+});
+// expected output: Array [3, 42, "foo"]
+```
+
+通过async函数，可以不需要then
+```javascript
+const promise1 = Promise.resolve(3);
+const promise2 = 42;
+const promise3 = new Promise(function(resolve, reject) {
+  setTimeout(resolve, 100, 'foo');
+});
+
+async function fun() {
+  const reuslt = await Promise.all([promise1, promise2, promise3]);
+  console.log(result)
+}
+fun()
+// expected output: Array [3, 42, "foo"]
+```
+
+
 ## js获得黏贴内容
 ```javascript
 // 监听paste事件
