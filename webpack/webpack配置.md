@@ -128,7 +128,10 @@ return {
 ## css modules：（:global()）能够对css进行模块化打包，防止css样式污染全局
 其实就是在css-loader后加参数，例如use: 'css-loader?modules'
 
-## less modifyVars：antd主题设置
+## extract-text-webpack-plugin，可以用来抽离打包到js中的css，并通过配置获得对应的css
+例如，自定义ui框架主题
+
+1. less modifyVars：antd主题设置，全局自定义修改antd主题
 例如:
 ```javascript
 const theme = {
@@ -137,6 +140,51 @@ const theme = {
 }
 
 // 在lessloader的处理中加入use: {options: { modifyVars: theme}}
+```
+项目实战配置：
+```js
+  // 定义
+  let antdLoader = extractAntPlugin.extract({
+    fallback: 'style-loader',
+    use: [
+      'css-loader?sourceMap',
+      `less-loader?{'sourceMap':true,'modifyVars':${antdTheme}}`
+    ]
+  });
+
+  // 在loader中使用
+  module: {
+    loaders: [
+      {
+        test: /\.less$/,
+        include: [path.join(__dirname, 'node_modules/antd')],
+        use: antdLoader
+      }
+    ]
+  }
+```
+
+2. css module， 防止css样式污染全局
+```js
+  let cssLoader = extractCssPlugin.extract({
+    fallback: 'style-loader',
+    use: [
+      // 规定module命名
+      'css-loader?sourceMap&modules&localIdentName=[name]__[local]--[hash:base64:5]',
+      'sass-loader?sourceMap'
+    ]
+  });
+
+  // 在loader中使用
+  module: {
+    loaders: [
+      {
+        test: /\.s?css$/,
+        include: [path.join(__dirname, 'src')],
+        use: cssLoader
+      }
+    ]
+  }
 ```
 
 ## html-loader，可以在html中使用${require('html-loader!./xxx.html')} 引入html，webpack就会对这个html进行编译
