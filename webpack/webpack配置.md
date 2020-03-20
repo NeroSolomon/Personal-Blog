@@ -169,7 +169,7 @@ const theme = {
   let cssLoader = extractCssPlugin.extract({
     fallback: 'style-loader',
     use: [
-      // 规定module命名
+      // 规定module命名: modules&localIdentName=[name]__[local]--[hash:base64:5]
       'css-loader?sourceMap&modules&localIdentName=[name]__[local]--[hash:base64:5]',
       'sass-loader?sourceMap'
     ]
