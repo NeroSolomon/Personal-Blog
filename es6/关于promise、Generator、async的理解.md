@@ -2,7 +2,7 @@
 
 ## 什么是promise
 promise是为了解决es5中异步执行函数中的回调地狱实现的语法糖，使用then的方法链式调用回调
-```
+```js
 const promise = new Promise(function(resolve, reject) {
   // ... some code
 
@@ -26,7 +26,7 @@ promise使用then的链式调用虽然解决了回调地狱的问题，但是失
 
 ## 什么是Generator
 generator可以解决promise语义性，使得异步代码可以像同步代码一样执行
-```
+```js
 function* helloWorldGenerator() {
   yield 'hello';
   yield 'world';
@@ -54,7 +54,7 @@ hw.next()
 
 ## 什么是async
 async函数也是一种让异步代码像同步代码执行的函数
-```
+```js
 const fs = require('fs');
 
 async function f() {
@@ -67,3 +67,25 @@ async function f() {
 f().then(v => console.log(v))
 ```
 通过async函数可以不用co、thunk等插件，使得异步代码可以按顺序一条条执行
+
+## async/await 的注意点
+1. async/await只是保证函数内同步运行，对于外部代码而言仍然是异步执行的
+2. await后如果跟随同步代码，就会变成同步函数，代码同步执行
+3. await后跟随异步代码，就会变成异步函数，执行到await处后，先执行async外的代码，且假如await后面跟的不是promise对象会将这个东西直接变成await的返回值
+```js
+async function fn() {
+  await console.log('a')
+}
+fn()
+console.log('b')
+// a
+// b
+
+async function fn() {
+  setTimeout(item => console.log('a'), 100)
+}
+fn()
+console.log('b')
+// b
+// a
+```
