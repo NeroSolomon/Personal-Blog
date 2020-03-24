@@ -8,7 +8,7 @@ function throttle(fun, ms) {
       timer = setTimeout(() => {
         fun.apply(that, arg)
         timer = null
-      })
+      }, ms)
     }
   }
 }
