@@ -9,7 +9,7 @@ function quickSort(arr, left = 0, right = arr.length - 1) {
 function partition(arr, left, right) {     // 分区操作
     const refer = left;
     let index = left + 1;
-    for (let i = index; i < arr.length; i++) {
+    for (let i = index; i <= right; i++) {
       if (arr[i] < arr[refer]) {
         swap(arr, i, index);
         // 发生交换后指向下一个数
