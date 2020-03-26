@@ -1,0 +1,870 @@
+Message-ID: <1967252583.1693.1585220566705.JavaMail.confluence2@ip-172-31-2-204>
+Subject: Exported From Confluence
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_1692_855143264.1585220566705"
+
+------=_Part_1692_855143264.1585220566705
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/exported.html
+
+<html xmlns:o=3D'urn:schemas-microsoft-com:office:office'
+      xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+      xmlns:v=3D'urn:schemas-microsoft-com:vml'
+      xmlns=3D'urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title>k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: solid 1px;
+            padding: 5px;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print medi=
+a */
+/* Full of !important until we improve batching for print CSS */
+
+@media print {
+    #main {
+        padding-bottom: 1em !important; /* The default padding of 6em is to=
+o much for printouts */
+    }
+
+    body {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        font-size: 10pt;
+        line-height: 1.2;
+    }
+
+    body, #full-height-container, #main, #page, #content, .has-personal-sid=
+ebar #content {
+        background: #fff !important;
+        color: #000 !important;
+        border: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    a, a:link, a:visited, a:focus, a:hover, a:active {
+        color: #000;
+    }
+
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        page-break-after: avoid;
+    }
+
+    pre {
+        font-family: Monaco, "Courier New", monospace;
+    }
+
+    #header,
+    .aui-header-inner,
+    #navigation,
+    #sidebar,
+    .sidebar,
+    #personal-info-sidebar,
+    .ia-fixed-sidebar,
+    .page-actions,
+    .navmenu,
+    .ajs-menu-bar,
+    .noprint,
+    .inline-control-link,
+    .inline-control-link a,
+    a.show-labels-editor,
+    .global-comment-actions,
+    .comment-actions,
+    .quick-comment-container,
+    #addcomment {
+        display: none !important;
+    }
+
+    /* CONF-28544 cannot print multiple pages in IE */
+    #splitter-content {
+        position: relative !important;
+    }
+
+    .comment .date::before {
+        content: none !important; /* remove middot for print view */
+    }
+
+    h1.pagetitle img {
+        height: auto;
+        width: auto;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #footer {
+        position: relative !important; /* CONF-17506 Place the footer at en=
+d of the content */
+        margin: 0;
+        padding: 0;
+        background: none;
+        clear: both;
+    }
+
+    #poweredby {
+        border-top: none;
+        background: none;
+    }
+
+    #poweredby li.print-only {
+        display: list-item;
+        font-style: italic;
+    }
+
+    #poweredby li.noprint {
+        display: none;
+    }
+
+    /* no width controls in print */
+    .wiki-content .table-wrap,
+    .wiki-content p,
+    .panel .codeContent,
+    .panel .codeContent pre,
+    .image-wrap {
+        overflow: visible !important;
+    }
+
+    /* TODO - should this work? */
+    #children-section,
+    #comments-section .comment,
+    #comments-section .comment .comment-body,
+    #comments-section .comment .comment-content,
+    #comments-section .comment p {
+        page-break-inside: avoid;
+    }
+
+    #page-children a {
+        text-decoration: none;
+    }
+
+    /**
+     hide twixies
+
+     the specificity here is a hack because print styles
+     are getting loaded before the base styles. */
+    #comments-section.pageSection .section-header,
+    #comments-section.pageSection .section-title,
+    #children-section.pageSection .section-header,
+    #children-section.pageSection .section-title,
+    .children-show-hide {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children-show-hide.icon {
+        display: none;
+    }
+
+    /* personal sidebar */
+    .has-personal-sidebar #content {
+        margin-right: 0px;
+    }
+
+    .has-personal-sidebar #content .pageSection {
+        margin-right: 0px;
+    }
+
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F</h1>
+    <div class=3D"Section1">
+        <p><style type=3D"text/css">/*<![CDATA[*/
+div.rbtoc1585220566625 {padding: 0px;}
+div.rbtoc1585220566625 ul {list-style: disc;margin-left: 0px;}
+div.rbtoc1585220566625 li {margin-left: 0px;padding-left: 0px;}
+
+/*]]>*/</style></p>
+<div class=3D"toc-macro rbtoc1585220566625">=20
+<ul class=3D"toc-indentation">=20
+<li><a href=3D"#k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-1=E3=80=81=E7=
+=AE=80=E8=BF=B0">1=E3=80=81=E7=AE=80=E8=BF=B0</a></li>=20
+<li><a href=3D"#k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-2=E3=80=81=E7=
+=99=BB=E5=BD=95k8s=E6=B5=8B=E8=AF=95=E7=8E=AF=E5=A2=83">2=E3=80=81=E7=99=BB=
+=E5=BD=95k8s=E6=B5=8B=E8=AF=95=E7=8E=AF=E5=A2=83</a></li>=20
+<li><a href=3D"#k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-3=E3=80=81=E4=
+=B8=8B=E8=BD=BD=E9=95=9C=E5=83=8F">3=E3=80=81=E4=B8=8B=E8=BD=BD=E9=95=9C=E5=
+=83=8F</a></li>=20
+<li><a href=3D"#k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-4=E3=80=81=E7=
+=BC=96=E5=86=99=E7=9B=B8=E5=85=B3=E9=83=A8=E7=BD=B2=E6=96=87=E4=BB=B6">4=E3=
+=80=81=E7=BC=96=E5=86=99=E7=9B=B8=E5=85=B3=E9=83=A8=E7=BD=B2=E6=96=87=E4=BB=
+=B6</a>=20
+<ul class=3D"toc-indentation">=20
+<li><a href=3D"#k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-4.1init.sh=EF=
+=BC=88=E5=88=9B=E5=BB=BA=E4=B8=80=E4=B8=AA=E6=96=B0=E7=9A=84=E5=91=BD=E5=90=
+=8D=E7=A9=BA=E9=97=B4=EF=BC=89">4.1 init.sh =EF=BC=88=E5=88=9B=E5=BB=BA=E4=
+=B8=80=E4=B8=AA=E6=96=B0=E7=9A=84=E5=91=BD=E5=90=8D=E7=A9=BA=E9=97=B4=EF=BC=
+=89</a></li>=20
+<li><a href=3D"#k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-4.2sentry-red=
+is-deployment.yaml">4.2 sentry-redis-deployment.yaml</a></li>=20
+<li><a href=3D"#k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-4.3sentry-pos=
+tgres-deployment.yaml">4.3 sentry-postgres-deployment.yaml</a></li>=20
+<li><a href=3D"#k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-4.4sentry-dep=
+loyment.yaml">4.4 sentry-deployment.yaml</a></li>=20
+<li><a href=3D"#k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-4.5sentry-cro=
+n-deployment.yaml">4.5 sentry-cron-deployment.yaml</a></li>=20
+<li><a href=3D"#k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-4.6sentry-wor=
+ker-deployment.yaml">4.6 sentry-worker-deployment.yaml</a></li>=20
+</ul> </li>=20
+<li><a href=3D"#k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-5=E3=80=81=E7=
+=94=9F=E6=88=90=E5=AF=86=E9=92=A5">5=E3=80=81=E7=94=9F=E6=88=90=E5=AF=86=E9=
+=92=A5</a></li>=20
+<li><a href=3D"#k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-6=E3=80=81=E9=
+=83=A8=E7=BD=B2sentry">6=E3=80=81=E9=83=A8=E7=BD=B2sentry</a>=20
+<ul class=3D"toc-indentation">=20
+<li><a href=3D"#k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-6.1=E6=89=A7=
+=E8=A1=8Cinit.sh=E5=88=9B=E5=BB=BAkubernetes=E5=91=BD=E5=90=8D=E7=A9=BA=E9=
+=97=B4">6.1 =E6=89=A7=E8=A1=8Cinit.sh=E5=88=9B=E5=BB=BAkubernetes=E5=91=BD=
+=E5=90=8D=E7=A9=BA=E9=97=B4</a></li>=20
+<li><a href=3D"#k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-6.2=E5=88=9B=
+=E5=BB=BA=E5=AE=B9=E5=99=A8=E5=8F=8A=E9=85=8D=E7=BD=AE">6.2 =E5=88=9B=E5=BB=
+=BA=E5=AE=B9=E5=99=A8=E5=8F=8A=E9=85=8D=E7=BD=AE</a></li>=20
+<li><a href=3D"#k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-6.3=E9=83=A8=
+=E7=BD=B2=E5=AE=8C=E6=88=90=EF=BC=8C=E6=9F=A5=E7=9C=8B=E5=AE=9E=E4=BE=8B=E6=
+=83=85=E5=86=B5">6.3 =E9=83=A8=E7=BD=B2=E5=AE=8C=E6=88=90=EF=BC=8C=E6=9F=A5=
+=E7=9C=8B=E5=AE=9E=E4=BE=8B=E6=83=85=E5=86=B5</a></li>=20
+</ul> </li>=20
+<li><a href=3D"#k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-7=E5=88=B0=E9=
+=9B=86=E7=BE=A4=E4=B8=AD=E6=9F=A5=E7=9C=8Bsentry=E6=9C=8D=E5=8A=A1=E6=98=AF=
+=E5=90=A6=E6=88=90=E5=8A=9F=E8=BF=90=E8=A1=8C">7 =E5=88=B0=E9=9B=86=E7=BE=
+=A4=E4=B8=AD=E6=9F=A5=E7=9C=8Bsentry=E6=9C=8D=E5=8A=A1=E6=98=AF=E5=90=A6=E6=
+=88=90=E5=8A=9F=E8=BF=90=E8=A1=8C</a>=20
+<ul class=3D"toc-indentation">=20
+<li><a href=3D"#k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-7.1=E8=BF=9B=
+=E5=85=A5=E6=9F=90=E4=B8=AA=E9=9B=86=E7=BE=A4">7.1 =E8=BF=9B=E5=85=A5=E6=9F=
+=90=E4=B8=AA=E9=9B=86=E7=BE=A4</a></li>=20
+<li><a href=3D"#k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-7.2=E5=9C=A8=
+=E9=83=A8=E7=BD=B2=E5=AE=B9=E5=99=A8=E7=9A=84=E7=AA=97=E5=8F=A3=E4=B8=AD=E6=
+=89=A7=E8=A1=8C=E4=BB=A5=E4=B8=8B=E5=91=BD=E4=BB=A4=E6=8B=BF=E5=88=B0=E6=9C=
+=8D=E5=8A=A1ip=E5=92=8C=E7=AB=AF=E5=8F=A3=E5=9C=B0=E5=9D=80=E3=80=81=E6=9C=
+=8D=E5=8A=A1=E5=90=8D">7.2 =E5=9C=A8=E9=83=A8=E7=BD=B2=E5=AE=B9=E5=99=A8=E7=
+=9A=84=E7=AA=97=E5=8F=A3=E4=B8=AD=E6=89=A7=E8=A1=8C=E4=BB=A5=E4=B8=8B=E5=91=
+=BD=E4=BB=A4=E6=8B=BF=E5=88=B0=E6=9C=8D=E5=8A=A1ip=E5=92=8C=E7=AB=AF=E5=8F=
+=A3=E5=9C=B0=E5=9D=80=E3=80=81=E6=9C=8D=E5=8A=A1=E5=90=8D</a></li>=20
+<li><a href=3D"#k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-7.3=E5=9C=A8=
+=E9=9B=86=E7=BE=A4=E9=87=8Ccurl">7.3 =E5=9C=A8=E9=9B=86=E7=BE=A4=E9=87=8Ccu=
+rl</a></li>=20
+</ul> </li>=20
+<li><a href=3D"#k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-8=E6=8C=82ing=
+ress=E6=9F=A5=E7=9C=8B=E5=9B=BE=E5=BD=A2=E7=95=8C=E9=9D=A2">8 =E6=8C=82ingr=
+ess=E6=9F=A5=E7=9C=8B=E5=9B=BE=E5=BD=A2=E7=95=8C=E9=9D=A2</a></li>=20
+</ul>=20
+</div>
+<p></p>
+<h1 id=3D"k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-1=E3=80=81=E7=AE=80=
+=E8=BF=B0">1=E3=80=81=E7=AE=80=E8=BF=B0</h1>
+<p>=E4=BB=A5=E4=B8=8B=E6=98=AF=E6=88=91=E5=9C=A8k8s=E6=B5=8B=E8=AF=95=E6=9C=
+=8D=E5=8A=A1=E5=99=A8=EF=BC=88<a class=3D"external-link" href=3D"http://18.=
+138.156.169" rel=3D"nofollow">18.138.156.169</a>=EF=BC=89=E4=B8=8A=E9=83=A8=
+=E7=BD=B2sentry=E6=9C=8D=E5=8A=A1=E7=9A=84=E6=80=BB=E7=BB=93</p>
+<h1 id=3D"k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-2=E3=80=81=E7=99=BB=
+=E5=BD=95k8s=E6=B5=8B=E8=AF=95=E7=8E=AF=E5=A2=83">2=E3=80=81=E7=99=BB=E5=BD=
+=95k8s=E6=B5=8B=E8=AF=95=E7=8E=AF=E5=A2=83</h1>
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: bash; gutter: false; theme: Confluence" data-theme=3D"Confluence">go 18.1=
+38.156.169
+cd /home</pre>=20
+</div>
+</div>
+<h1 id=3D"k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-3=E3=80=81=E4=B8=8B=
+=E8=BD=BD=E9=95=9C=E5=83=8F">3=E3=80=81=E4=B8=8B=E8=BD=BD=E9=95=9C=E5=83=8F=
+</h1>
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: bash; gutter: false; theme: Confluence" data-theme=3D"Confluence">docker =
+pull redis:latest=20
+docker pull postgres:latest=20
+docker pull sentry:latest</pre>=20
+</div>
+</div>
+<h1 class=3D"auto-cursor-target" id=3D"k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=
+=E5=BC=8F-4=E3=80=81=E7=BC=96=E5=86=99=E7=9B=B8=E5=85=B3=E9=83=A8=E7=BD=B2=
+=E6=96=87=E4=BB=B6">4=E3=80=81=E7=BC=96=E5=86=99=E7=9B=B8=E5=85=B3=E9=83=A8=
+=E7=BD=B2=E6=96=87=E4=BB=B6</h1>
+<h2 id=3D"k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-4.1init.sh=EF=BC=88=
+=E5=88=9B=E5=BB=BA=E4=B8=80=E4=B8=AA=E6=96=B0=E7=9A=84=E5=91=BD=E5=90=8D=E7=
+=A9=BA=E9=97=B4=EF=BC=89">4.1 init.sh =EF=BC=88=E5=88=9B=E5=BB=BA=E4=B8=80=
+=E4=B8=AA=E6=96=B0=E7=9A=84=E5=91=BD=E5=90=8D=E7=A9=BA=E9=97=B4=EF=BC=89</h=
+2>
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: bash; gutter: false; theme: Confluence" data-theme=3D"Confluence">kubectl=
+ create namespace sentry </pre>=20
+</div>
+</div>
+<h2 class=3D"auto-cursor-target" id=3D"k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=
+=E5=BC=8F-4.2sentry-redis-deployment.yaml">4.2 sentry-redis-deployment.yaml=
+</h2>
+<p class=3D"p1">=E5=88=9B=E5=BB=BA=E4=B8=80=E4=B8=AA<span class=3D"s1">depl=
+oyment</span>=EF=BC=8C=E6=8E=A7=E5=88=B6=E5=88=9B=E5=BB=BA=E4=B8=80=E4=B8=
+=AA<span class=3D"s1">redis</span>=E5=AE=9E=E4=BE=8B=E3=80=82=E5=B9=B6=E5=
+=88=9B=E5=BB=BA=E4=B8=80=E4=B8=AA<span class=3D"s1">service</span>=E6=9C=8D=
+=E5=8A=A1=EF=BC=8C=E5=AE=B9=E5=99=A8=E5=86=85=E7=9A=84=E6=9C=8D=E5=8A=A1=E9=
+=83=BD=E5=8F=AF=E4=BB=A5=E4=BD=BF=E7=94=A8<span class=3D"s1">service</span>=
+=E5=90=8D=E7=A7=B0=E8=AE=BF=E9=97=AE=E5=88=B0=E5=AE=83=E3=80=82</p>
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: bash; gutter: false; theme: Confluence" data-theme=3D"Confluence">---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sentry-redis-deployment
+  namespace: sentry
+  labels:
+    layer: sentry
+    env: all
+    app: sentry-redis
+    name: sentry-redis-server
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        layer: sentry
+        env: all
+        app: sentry-redis
+        name: sentry-redis-server
+    spec:
+      containers:
+      - name: sentry-redis
+        image: redis:latest
+        ports:
+          - containerPort: 6379
+        volumeMounts:
+          - mountPath: /redis-master-data=20
+            name: data
+      volumes:
+      - name: data
+        hostPath:
+          path: /mnt/vdc/containers/sentry-redis
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: redis
+  namespace: sentry
+  labels:
+    layer: sentry
+    env: all
+    app: sentry-redis
+    name: sentry-redis-server
+spec:
+  ports:
+  - port: 6379
+    targetPort: 6379
+  selector:
+    layer: sentry
+    env: all
+    app: sentry-redis
+    name: sentry-redis-server    </pre>=20
+</div>
+</div>
+<h2 class=3D"auto-cursor-target" id=3D"k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=
+=E5=BC=8F-4.3sentry-postgres-deployment.yaml">4.3 sentry-postgres-deploymen=
+t.yaml</h2>
+<p class=3D"p1">=E5=88=9B=E5=BB=BA=E4=B8=80=E4=B8=AA<span class=3D"s1">depl=
+oyment</span>=EF=BC=8C=E6=8E=A7=E5=88=B6=E5=88=9B=E5=BB=BA=E4=B8=80=E4=B8=
+=AA<span class=3D"s1">postgres</span>=E5=AE=9E=E4=BE=8B=E3=80=82=E5=B9=B6=
+=E5=88=9B=E5=BB=BA=E4=B8=80=E4=B8=AA<span class=3D"s1">service</span>=E6=9C=
+=8D=E5=8A=A1=EF=BC=8C=E5=AE=B9=E5=99=A8=E5=86=85=E7=9A=84=E6=9C=8D=E5=8A=A1=
+=E9=83=BD=E5=8F=AF=E4=BB=A5=E4=BD=BF=E7=94=A8<span class=3D"s1">service</sp=
+an>=E5=90=8D=E7=A7=B0=E8=AE=BF=E9=97=AE=E5=88=B0=E5=AE=83=E3=80=82</p>
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: bash; gutter: false; theme: Confluence" data-theme=3D"Confluence">---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sentry-postgres-deployment
+  namespace: sentry
+  labels:
+    layer: sentry
+    env: all
+    app: sentry-postgres
+    name: sentry-postgres-server
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        layer: sentry
+        env: all
+        app: sentry-postgres
+        name: sentry-postgres-server
+    spec:
+      containers:
+      - name: sentry-postgres
+        image: postgres:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 5432
+        env:
+        - name: POSTGRES_PASSWORD
+          value: "secret"         =20
+        - name: POSTGRES_USER
+          value: "sentry"    =20
+        - name: POSTGRES_DBNAME
+          value: "sentry" =20
+        - name: POSTGRES_DBUSER
+          value: "sentry" =20
+        - name: POSTGRES_DBPASS
+          value: "secret"           =20
+        volumeMounts:
+          - mountPath: /var/lib/postgresql/data
+            name: data
+      volumes:
+      - name: data
+        hostPath:
+          path: /mnt/vdc/containers/sentry-postgres/data =20
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: postgres
+  namespace: sentry
+  labels:
+    layer: sentry
+    env: all
+    app: sentry-postgres
+    name: sentry-postgres-server
+spec:
+#  type: NodePort
+  ports:
+  - port: 5432
+    targetPort: 5432
+#    nodePort: 6379
+  selector:
+    layer: sentry
+    env: all
+    app: sentry-postgres
+    name: sentry-postgres-server </pre>=20
+</div>
+</div>
+<h2 class=3D"p1" id=3D"k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-4.4sen=
+try-deployment.yaml">4.4 sentry-deployment.yaml</h2>
+<p class=3D"p1">=E5=88=9B=E5=BB=BA=E4=B8=80=E4=B8=AA<span class=3D"s1">depl=
+oyment</span>=EF=BC=8C=E6=8E=A7=E5=88=B6=E5=88=9B=E5=BB=BA=E4=B8=80=E4=B8=
+=AA<span class=3D"s1">postgres</span>=E5=AE=9E=E4=BE=8B=E3=80=82=E5=B9=B6=
+=E5=88=9B=E5=BB=BA=E4=B8=80=E4=B8=AA<span class=3D"s1">node-type</span>=E7=
+=B1=BB=E5=9E=8B=E7=9A=84<span class=3D"s1">service</span>=E6=9C=8D=E5=8A=A1=
+=EF=BC=8C=E5=8F=AF=E4=BB=A5=E9=80=9A=E8=BF=87=E5=AE=BF=E4=B8=BB=E6=9C=BA=E7=
+=9A=84<span class=3D"s1">9000</span>=E7=AB=AF=E5=8F=A3=EF=BC=8C=E5=AF=B9=E5=
+=A4=96=E6=8F=90=E4=BE=9B=E8=AE=BF=E9=97=AE=E6=9C=8D=E5=8A=A1=E3=80=82</p>
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: bash; gutter: false; theme: Confluence" data-theme=3D"Confluence">---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sentry-deployment
+  namespace: sentry
+  labels:
+    layer: sentry
+    env: all
+    app: sentry
+    name: sentry-server
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        layer: sentry
+        env: all
+        app: sentry
+        name: sentry-server
+    spec:
+      containers:
+      - name: sentry
+        image: sentry:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 9000
+        env:
+        - name: SENTRY_SECRET_KEY
+          value: "${SENTRY_SECRET_KEY}"
+        - name: SENTRY_POSTGRES_HOST
+          value: "postgres"                     =20
+        - name: SENTRY_DB_PASSWORD
+          value: "secret"           =20
+        - name: SENTRY_DB_USER
+          value: "sentry"          =20
+        volumeMounts:
+          - mountPath: /var/lib/sentry/files
+            name: data
+      volumes:
+      - name: data
+        hostPath:
+          path: /mnt/vdc/containers/sentry/files =20
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: sentry-svc
+  namespace: sentry
+  labels:
+    layer: sentry
+    env: all
+    app: sentry
+    name: sentry-server
+spec:
+  type: NodePort
+  ports:
+  - port: 9000
+  selector:
+    layer: sentry
+    env: all
+    app: sentry
+    name: sentry-server    </pre>=20
+</div>
+</div>
+<h2 class=3D"p1" id=3D"k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-4.5sen=
+try-cron-deployment.yaml">4.5 sentry-cron-deployment.yaml</h2>
+<p class=3D"p1"><span class=3D"s1">=E5=88=9B=E5=BB=BA=E4=B8=80=E4=B8=AA</sp=
+an>deployment<span class=3D"s1">=EF=BC=8C=E6=8E=A7=E5=88=B6=E5=88=9B=E5=BB=
+=BA=E4=B8=80=E4=B8=AA</span>postgres<span class=3D"s1">=E5=AE=9E=E4=BE=8B=
+=E3=80=82</span></p>
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: bash; gutter: false; theme: Confluence" data-theme=3D"Confluence">---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sentry-cron-deployment
+  namespace: sentry
+  labels:
+    layer: sentry
+    env: all
+    app: sentry-cron
+    name: sentry-cron-server
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        layer: sentry
+        env: all
+        app: sentry-cron
+        name: sentry-cron-server
+    spec:
+      containers:
+      - name: sentry-cron
+        image: sentry:latest
+        imagePullPolicy: IfNotPresent
+        args: ["run","cron"]
+        env:
+        - name: SENTRY_SECRET_KEY
+          value: "${SENTRY_SECRET_KEY}"
+        - name: SENTRY_POSTGRES_HOST
+          value: "postgres"                     =20
+        - name: SENTRY_DB_PASSWORD
+          value: "secret"           =20
+        - name: SENTRY_DB_USER
+          value: "sentry"    </pre>=20
+</div>
+</div>
+<h2 class=3D"auto-cursor-target" id=3D"k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=
+=E5=BC=8F-4.6sentry-worker-deployment.yaml">4.6 sentry-worker-deployment.ya=
+ml</h2>
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: bash; gutter: false; theme: Confluence" data-theme=3D"Confluence">---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sentry-worker-deployment
+  namespace: sentry
+  labels:
+    layer: sentry
+    env: all
+    app: sentry-worker
+    name: sentry-worker-server
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        layer: sentry
+        env: all
+        app: sentry-worker
+        name: sentry-worker-server
+    spec:
+      containers:
+      - name: sentry-worker
+        image: sentry:latest
+        imagePullPolicy: IfNotPresent
+        args: ["run","worker"]
+        env:
+        - name: SENTRY_SECRET_KEY
+          value: "${SENTRY_SECRET_KEY}"
+        - name: SENTRY_POSTGRES_HOST
+          value: "postgres"                     =20
+        - name: SENTRY_DB_PASSWORD
+          value: "secret"           =20
+        - name: SENTRY_DB_USER
+          value: "sentry"       </pre>=20
+</div>
+</div>
+<h1 class=3D"auto-cursor-target" id=3D"k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=
+=E5=BC=8F-5=E3=80=81=E7=94=9F=E6=88=90=E5=AF=86=E9=92=A5">5=E3=80=81=E7=94=
+=9F=E6=88=90=E5=AF=86=E9=92=A5</h1>
+<p class=3D"p1">=E5=9C=A8=E4=BB=A5=E4=B8=8A=E7=9A=84<span class=3D"s1">kube=
+rnetes</span>=E9=83=A8=E7=BD=B2=E9=85=8D=E7=BD=AE=E6=96=87=E4=BB=B6=E4=B8=
+=AD=E4=BC=9A=E6=9C=89=E4=B8=80=E4=B8=AA=E5=8F=98=E9=87=8F<span class=3D"s1"=
+>${SENTRY_SECRET_KEY}</span>=EF=BC=8C=E8=AF=A5=E5=AF=86=E9=92=A5=E5=8F=AF=
+=E4=BB=A5=E7=94=A8=E4=BB=A5=E4=B8=8B=E6=8C=87=E4=BB=A4=E6=9D=A5=E7=94=9F=E6=
+=88=90=EF=BC=8C=E5=B9=B6=E6=9B=BF=E6=8D=A2=E8=AF=A5=E5=8F=98=E9=87=8F=E5=AE=
+=9E=E9=99=85=E5=80=BC=E3=80=82</p>
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: bash; gutter: false; theme: Confluence" data-theme=3D"Confluence">docker =
+run --rm sentry config generate-secret-key</pre>=20
+</div>
+</div>
+<h1 class=3D"p2" id=3D"k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-6=E3=
+=80=81=E9=83=A8=E7=BD=B2sentry">6=E3=80=81=E9=83=A8=E7=BD=B2sentry</h1>
+<h2 id=3D"k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-6.1=E6=89=A7=E8=A1=
+=8Cinit.sh=E5=88=9B=E5=BB=BAkubernetes=E5=91=BD=E5=90=8D=E7=A9=BA=E9=97=B4"=
+>6.1 =E6=89=A7=E8=A1=8Cinit.sh<span class=3D"s1" style=3D"font-size: 14.0px=
+;letter-spacing: 0.0px;">=E5=88=9B=E5=BB=BA</span>kubernetes<span class=3D"=
+s1" style=3D"font-size: 14.0px;letter-spacing: 0.0px;">=E5=91=BD=E5=90=8D=
+=E7=A9=BA=E9=97=B4</span></h2>
+<p class=3D"p1">=E5=9C=A8=E4=BB=A5=E4=B8=8A=E7=9A=84<span class=3D"s1">kube=
+rnetes</span>=E9=83=A8=E7=BD=B2=E9=85=8D=E7=BD=AE=E6=96=87=E4=BB=B6=E4=B8=
+=AD=E4=BC=9A=E6=9C=89=E4=B8=80=E4=B8=AA=E5=8F=98=E9=87=8F<span class=3D"s1"=
+>${SENTRY_SECRET_KEY}</span>=EF=BC=8C=E8=AF=A5=E5=AF=86=E9=92=A5=E5=8F=AF=
+=E4=BB=A5=E7=94=A8=E4=BB=A5=E4=B8=8B=E6=8C=87=E4=BB=A4=E6=9D=A5=E7=94=9F=E6=
+=88=90=EF=BC=8C=E5=B9=B6=E6=9B=BF=E6=8D=A2=E8=AF=A5=E5=8F=98=E9=87=8F=E5=AE=
+=9E=E9=99=85=E5=80=BC=E3=80=82</p>
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: bash; gutter: false; theme: Confluence" data-theme=3D"Confluence">sh ./in=
+it.sh</pre>=20
+</div>
+</div>
+<h2 class=3D"auto-cursor-target" id=3D"k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=
+=E5=BC=8F-6.2=E5=88=9B=E5=BB=BA=E5=AE=B9=E5=99=A8=E5=8F=8A=E9=85=8D=E7=BD=
+=AE">6.2 =E5=88=9B=E5=BB=BA=E5=AE=B9=E5=99=A8=E5=8F=8A=E9=85=8D=E7=BD=AE</h=
+2>
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: bash; gutter: false; theme: Confluence" data-theme=3D"Confluence">// =E5=
+=88=9B=E5=BB=BAredis=E5=AE=B9=E5=99=A8
+kubectl create -f ./sentry-redis-deployment.yaml
+// =E5=88=9B=E5=BB=BApostgres=E5=AE=B9=E5=99=A8
+kubectl create -f ./sentry-postgres-deployment.yaml
+// =E5=88=9B=E5=BB=BAsentry web=E5=AE=B9=E5=99=A8
+kubectl create -f ./sentry-deployment.yaml
+// =E5=A4=87=E6=B3=A81
+// =E5=88=9B=E5=BB=BA sentry cron=E5=AE=B9=E5=99=A8
+kubectl create -f ./sentry-cron-deployment.yaml
+// =E5=88=9B=E5=BB=BA sentry worker=E5=AE=B9=E5=99=A8
+kubectl create -f ./sentry-worker-deployment.yaml</pre>=20
+</div>
+</div>
+<p class=3D"auto-cursor-target">=E5=A4=87=E6=B3=A81:</p>
+<p>=E7=94=B1=E4=BA=8Esentry=E8=BF=90=E8=A1=8C=E9=9C=80=E8=A6=81=E5=B0=86red=
+is=E4=B8=AD=E7=9A=84=E7=BC=93=E5=AD=98=E6=95=B0=E6=8D=AE=E5=86=99=E5=85=A5=
+=E5=88=B0postgres=E6=95=B0=E6=8D=AE=E5=BA=93=E4=B8=AD=E3=80=82<br>=E4=BB=A5=
+=E5=8F=8Asentry web=E7=AE=A1=E7=90=86=E7=95=8C=E9=9D=A2=E9=9C=80=E8=A6=81=
+=E4=B8=80=E4=BA=9B=E7=B3=BB=E7=BB=9F=E5=85=83=E6=95=B0=E6=8D=AE=E7=9A=84=E9=
+=85=8D=E7=BD=AE=E4=BF=A1=E6=81=AF=E3=80=82<br>=E8=80=8C=E8=BF=99=E4=BA=9B=
+=E4=BF=A1=E6=81=AF=E9=83=BD=E6=98=AF=E5=AD=98=E5=82=A8=E5=9C=A8postgres=E6=
+=95=B0=E6=8D=AE=E5=BA=93=E4=B8=AD=E7=9A=84=EF=BC=8C=E6=89=80=E4=BB=A5=E5=9C=
+=A8=E5=88=9B=E5=BB=BA=E5=AE=8C=E6=88=90sentry web=E5=AE=9E=E4=BE=8B=E4=BB=
+=A5=E5=90=8E=EF=BC=8C=E6=88=91=E4=BB=AC=E9=9C=80=E8=A6=81=E8=BF=9B=E5=85=A5=
+=E5=88=B0sentry web=E5=AE=B9=E5=99=A8=E5=AE=9E=E4=BE=8B=E4=B8=AD=EF=BC=8C=
+=E5=88=9D=E5=A7=8B=E5=8C=96=E6=95=B0=E6=8D=AE=E5=BA=93=EF=BC=8C=E5=85=B7=E4=
+=BD=93=E6=93=8D=E4=BD=9C=E5=A6=82=E4=B8=8B</p>
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: bash; gutter: false; theme: Confluence" data-theme=3D"Confluence">// =E8=
+=8E=B7=E5=8F=96sentry web=E5=AE=B9=E5=99=A8podID=EF=BC=9A
+kubectl get pod -n sentry | grep sentry-deployment
+// =E8=BF=9B=E5=85=A5=E5=88=B0sentry web=E5=AE=B9=E5=99=A8=E4=B8=AD=EF=BC=
+=9A=E4=B8=8B=E9=9D=A2=E7=9A=84sentry-deployment-7c97947ff8-md664=E6=98=AFid
+kubectl exec -it -n sentry sentry-deployment-7c97947ff8-md664  /bin/bash
+//=E5=9C=A8=E5=AE=B9=E5=99=A8=E4=B8=AD=E6=89=A7=E8=A1=8Cupgrade=E5=91=BD=E4=
+=BB=A4=EF=BC=9A=E5=A4=87=E6=B3=A82
+sentry upgrade</pre>=20
+</div>
+</div>
+<p>=E5=A4=87=E6=B3=A82:</p>
+<p>=E8=AF=A5=E5=91=BD=E4=BB=A4=E4=BC=9A=E6=89=A7=E8=A1=8C=E4=B8=80=E7=B3=BB=
+=E5=88=97=E7=9A=84=E5=BB=BA=E8=A1=A8=E6=93=8D=E4=BD=9C=E5=8F=8A=E7=9B=B8=E5=
+=85=B3=E6=97=A5=E5=BF=97=E7=9A=84=E8=BE=93=E5=87=BA=E3=80=82<br>=E5=9C=A8=
+=E4=BA=9B=E8=BF=87=E7=A8=8B=E4=B8=AD=E4=BC=9A=E6=8F=90=E7=A4=BA=E4=BD=A0=E8=
+=BE=93=E5=85=A5sentry =E7=B3=BB=E7=BB=9F=E8=B6=85=E7=BA=A7=E7=AE=A1=E7=90=
+=86=E5=91=98=E7=9A=84=E7=94=A8=E6=88=B7=E5=90=8D=E5=8F=8A=E5=AF=86=E7=A0=81=
+=E3=80=82<br>=E5=8F=AF=E4=BB=A5=E5=9C=A8=E8=AF=A5=E6=8F=90=E7=A4=BA=E4=B8=
+=8B=E8=BF=9B=E8=A1=8C=E5=88=9D=E5=A7=8B=E5=8C=96=EF=BC=8C=E4=B9=9F=E5=8F=AF=
+=E4=BB=A5=E4=B8=8D=E8=BE=93=EF=BC=8C=E7=AD=89=E5=90=8E=E5=8D=95=E7=8B=AC=E6=
+=89=A7=E8=A1=8C=E6=8C=87=E4=BB=A4<strong>sentry createuser</strong>=E8=BF=
+=9B=E8=A1=8C=E7=B3=BB=E7=BB=9F=E8=B6=85=E7=BA=A7=E7=AE=A1=E7=90=86=E5=91=98=
+=E7=9A=84=E5=88=9D=E5=A7=8B=E5=8C=96=E3=80=82</p>
+<h2 class=3D"auto-cursor-target" id=3D"k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=
+=E5=BC=8F-6.3=E9=83=A8=E7=BD=B2=E5=AE=8C=E6=88=90=EF=BC=8C=E6=9F=A5=E7=9C=
+=8B=E5=AE=9E=E4=BE=8B=E6=83=85=E5=86=B5">6.3 =E9=83=A8=E7=BD=B2=E5=AE=8C=E6=
+=88=90=EF=BC=8C=E6=9F=A5=E7=9C=8B=E5=AE=9E=E4=BE=8B=E6=83=85=E5=86=B5</h2>
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: bash; gutter: false; theme: Confluence" data-theme=3D"Confluence">kubectl=
+ get all -n sentry</pre>=20
+</div>
+</div>
+<h1 id=3D"k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-7=E5=88=B0=E9=9B=86=
+=E7=BE=A4=E4=B8=AD=E6=9F=A5=E7=9C=8Bsentry=E6=9C=8D=E5=8A=A1=E6=98=AF=E5=90=
+=A6=E6=88=90=E5=8A=9F=E8=BF=90=E8=A1=8C"><br>7 =E5=88=B0=E9=9B=86=E7=BE=A4=
+=E4=B8=AD=E6=9F=A5=E7=9C=8Bsentry=E6=9C=8D=E5=8A=A1=E6=98=AF=E5=90=A6=E6=88=
+=90=E5=8A=9F=E8=BF=90=E8=A1=8C</h1>
+<h2 id=3D"k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-7.1=E8=BF=9B=E5=85=
+=A5=E6=9F=90=E4=B8=AA=E9=9B=86=E7=BE=A4">7.1 =E8=BF=9B=E5=85=A5=E6=9F=90=E4=
+=B8=AA=E9=9B=86=E7=BE=A4</h2>
+<p>=E7=94=B1=E4=BA=8E=E6=88=91=E4=BB=AC=E7=9A=84=E5=AE=B9=E5=99=A8=E6=9C=8D=
+=E5=8A=A1=E6=98=AF=E5=9C=A8=E9=9B=86=E7=BE=A4=E9=87=8C=E7=9A=84=EF=BC=8C=E6=
+=89=80=E4=BB=A5=E9=9C=80=E8=A6=81=E5=88=B0=E9=9B=86=E7=BE=A4=E9=87=8C=E6=9F=
+=A5=E7=9C=8B</p>
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: bash; gutter: false; theme: Confluence" data-theme=3D"Confluence">// =E7=
+=99=BB=E5=BD=95=E8=B7=B3=E6=9D=BF=E6=9C=BA
+satool
+1
+32
+19</pre>=20
+</div>
+</div>
+<h2 id=3D"k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-7.2=E5=9C=A8=E9=83=
+=A8=E7=BD=B2=E5=AE=B9=E5=99=A8=E7=9A=84=E7=AA=97=E5=8F=A3=E4=B8=AD=E6=89=A7=
+=E8=A1=8C=E4=BB=A5=E4=B8=8B=E5=91=BD=E4=BB=A4=E6=8B=BF=E5=88=B0=E6=9C=8D=E5=
+=8A=A1ip=E5=92=8C=E7=AB=AF=E5=8F=A3=E5=9C=B0=E5=9D=80=E3=80=81=E6=9C=8D=E5=
+=8A=A1=E5=90=8D">7.2 =E5=9C=A8=E9=83=A8=E7=BD=B2=E5=AE=B9=E5=99=A8=E7=9A=84=
+=E7=AA=97=E5=8F=A3=E4=B8=AD=E6=89=A7=E8=A1=8C=E4=BB=A5=E4=B8=8B=E5=91=BD=E4=
+=BB=A4=E6=8B=BF=E5=88=B0=E6=9C=8D=E5=8A=A1ip=E5=92=8C=E7=AB=AF=E5=8F=A3=E5=
+=9C=B0=E5=9D=80=E3=80=81=E6=9C=8D=E5=8A=A1=E5=90=8D</h2>
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: bash; gutter: false; theme: Confluence" data-theme=3D"Confluence">kubectl=
+ get svc -n sentry</pre>=20
+</div>
+</div>
+<h2 id=3D"k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-7.3=E5=9C=A8=E9=9B=
+=86=E7=BE=A4=E9=87=8Ccurl">7.3 =E5=9C=A8=E9=9B=86=E7=BE=A4=E9=87=8Ccurl</h2=
+>
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: bash; gutter: false; theme: Confluence" data-theme=3D"Confluence">// =E6=
+=89=A7=E8=A1=8C=E4=B8=8A=E9=9D=A2=E7=9A=84=E5=91=BD=E4=BB=A4=E5=BE=97=E5=88=
+=B0=E4=BB=A5=E4=B8=8Bip:port
+curl -i http://10.100.117.167:900</pre>=20
+</div>
+</div>
+<p>=E5=A6=82=E6=9E=9C=E6=9C=8D=E5=8A=A1=E6=88=90=E5=8A=9F=E8=BF=90=E8=A1=8C=
+=E7=9A=84=E8=AF=9D=E5=B0=B1=E4=BC=9A=E5=87=BA=E7=8E=B0=E8=AF=B7=E6=B1=82=E5=
+=A4=B4=E9=83=A8=E4=BF=A1=E6=81=AF</p>
+<h1 id=3D"k8s=E9=83=A8=E7=BD=B2sentry=E6=96=B9=E5=BC=8F-8=E6=8C=82ingress=
+=E6=9F=A5=E7=9C=8B=E5=9B=BE=E5=BD=A2=E7=95=8C=E9=9D=A2">8 =E6=8C=82ingress=
+=E6=9F=A5=E7=9C=8B=E5=9B=BE=E5=BD=A2=E7=95=8C=E9=9D=A2</h1>
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: bash; gutter: false; theme: Confluence" data-theme=3D"Confluence">kubectl=
+ port-forward service/sentry-svc --address 0.0.0.0 9000 -n sentry</pre>=20
+</div>
+</div>
+<p>=E8=BF=99=E9=87=8C=E7=9A=84sentry-svc=E6=98=AF7.2=E4=B8=AD=E7=9A=84=E6=
+=9C=8D=E5=8A=A1=E5=90=8D</p>
+<p><br></p>
+<p>=E5=88=B0=E6=AD=A4=E5=B0=B1=E5=8F=AF=E4=BB=A5=E8=AE=BF=E9=97=AEk8s=E7=9A=
+=84=E6=9C=8D=E5=8A=A1=E5=99=A8=E7=9A=84ip=E7=9A=849000=E7=AB=AF=E5=8F=A3=E8=
+=AE=BF=E9=97=AEsentry=E6=9C=8D=E5=8A=A1=E4=BA=86</p>
+<p>=E6=B3=A8=EF=BC=9A=E5=81=87=E5=A6=82=E4=BD=A0=E4=B9=8B=E5=89=8D=E7=99=BB=
+=E5=BD=95=E8=BF=87sentry=E7=9A=84=E5=85=B6=E5=AE=83=E6=9C=8D=E5=8A=A1=EF=BC=
+=8C=E9=9C=80=E8=A6=81=E6=B8=85=E6=A5=9A=E4=B8=80=E4=B8=8B=E6=9C=89=E5=85=B3=
+sentry=E7=9A=84cookie=EF=BC=8C=E5=90=A6=E5=88=99=E4=BC=9A=E5=87=BA=E7=8E=B0=
+csrf=E6=A0=A1=E9=AA=8C=E4=B8=8D=E9=80=9A=E8=BF=87=E7=9A=84=E9=97=AE=E9=A2=
+=98</p>
+    </div>
+</body>
+</html>
+------=_Part_1692_855143264.1585220566705--
