@@ -26,3 +26,5 @@
 9. componentDidUpdate
 10. componentWillUnmount, 即将卸载组件
 11. componentDidCatch 任何一处js发生错误时，触发的钩子
+
+[参考链接](https://segmentfault.com/a/1190000016617400?utm_source=tag-newest)
