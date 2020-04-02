@@ -233,3 +233,7 @@ update会在data的数据发生变化的时候被触发，所以重复给data里
 // change string只会触发一次update，后面因为值都相等，所以就不会触发update了
 // change obj每一次都会触发update
 ```
+
+## vue中的template标签
+类似原生js中使用createDocumentFragment创建的文档片段，他不会被渲染在dom中，只是作为一个容器<br>
+react中也有类似的React.Fragment
