@@ -3,7 +3,7 @@ function Permutation(str){
   if(str.length==1){
     res.push(str)
   }else{
-    let obj=[]
+    let obj={}
     for(let i=0;i<str.length;i++){
       let c=str[i]
       if(!obj[c]){
