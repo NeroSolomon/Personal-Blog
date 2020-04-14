@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul {
+      max-height: 100px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <ul>
+      <li>10</li>
+      <li>10</li>
+      <li>10</li>
+      <li>10</li>
+      <li>10</li>
+      <li>10</li>
+      <li>10</li>
+      <li>10</li>
+      <li>10</li>
+      <li id="test">11</li>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li>10</li>
+      <li>10</li>
+      <li>10</li>
+      <li>10</li>
+      <li>10</li>
+      <li>10</li>
+      <li>10</li>
+      <li>10</li>
+      <li>10</li>
+      <li>10</li>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li>10</li>
+      <li>10</li>
+      <li>10</li>
+      <li>10</li>
+      <li>10</li>
+      <li>10</li>
+      <li>10</li>
+      <li>10</li>
+      <li>10</li>
+      <li>10</li>
+    </ul>
+  </div>
+</body>
+<script>
+  window.onload = () => {
+    setTimeout(() => {
+      const test = document.getElementById('test');
+      test.scrollIntoView()
+    }, 2000)
+  }
+</script>
+</html>
