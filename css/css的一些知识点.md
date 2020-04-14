@@ -24,3 +24,8 @@ Normalize：会根据各个浏览器的不同保留有用的浏览器特色样�
   background-color: rgba(50,50,50,.1);
 }
 ```
+
+### word-wrap、word-break、white-space的区别
+1. word-wrap: 控制是否允许单词内换行
+2. word-break: 控制单词在换行的时候如何断开
+3. white-space: 控制空白符号的处理方式
