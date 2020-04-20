@@ -20,8 +20,8 @@ $.__proto__.fun = function() {
 ### 如何模拟new
 先分析一下new的概念：<br>
 1.先创建一个新对象<br>
-2.将对象的原型执行构造函数的prototype<br>
-3.将构造函数的this指向对象<br>
+2.将对象的原型指向构造函数的prototype<br>
+3.将构造函数的this指向对象，为对象变量赋值<br>
 4.返回对象<br>
 
 模拟：
