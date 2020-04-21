@@ -231,3 +231,10 @@ onPaste(e) {
 
 ## requestAnimation
 requestAnimation自动适配屏幕的刷新频率，避免掉帧，由系统来决定回调函数的执行时机，节省cpu。
+
+## 将页面加入收藏夹
+```js
+  var title = document.title;
+  var URL = document.URL;
+  window.external.addFavorite(url, title);
+```
