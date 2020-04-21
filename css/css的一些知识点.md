@@ -29,3 +29,10 @@ Normalize：会根据各个浏览器的不同保留有用的浏览器特色样�
 1. word-wrap: 控制是否允许单词内换行
 2. word-break: 控制单词在换行的时候如何断开
 3. white-space: 控制空白符号的处理方式
+
+### inline-block元素间距问题
+图片以及所有inline-block元素之间都会有4px的间距，直接在父元素font-size: 0即可去除。<br>
+解决方案：
+1. 父元素：font-size: 0;
+2. 用空白注释连接元素
+3. 不换行书写
