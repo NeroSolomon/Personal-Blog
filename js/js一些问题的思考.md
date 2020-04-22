@@ -73,9 +73,9 @@ Function.prototype.myApply = function(context) {
 }
 ```
 
-call
+bind
 ```
-Function.prorotype.myCall = function(context) {
+Function.prorotype.myBind = function(context) {
   const _this = this;
   let args = arguments.slice(1);
 

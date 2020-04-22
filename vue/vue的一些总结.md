@@ -58,8 +58,6 @@ mounted() {
 }
 ```
 
-### 在vue中如果要监听组件的原生事件，需要用.native, 例如@keypress.mative
-
 ### 自定义指令
 ```javascript
 // 注册一个全局自定义指令 `v-focus`
