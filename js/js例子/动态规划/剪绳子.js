@@ -1,22 +1,15 @@
 function cutRope(number)
 {
     // write code here
-    let result = [];
-    let answer = [0, 0, 1, 2, 4];
-    if(number < 5) {
-        return answer[number];
+    var max = 1;
+    if(number<=3 && number>0){
+        return number-1;
     }
-    while(number > 0) {
-        if(number - 3 >= 0) {
-            result.push(3);
-            number -= 3;
-        }
-        if(number - 2 >= 0) {
-            result.push(2);
-            number -= 2;
-        }
+    while(number>4){
+        number-=3;
+        max*=3;
     }
-    return result.reduce((x, y) => x * y);
+    return max*number;
 }
 
-console.log(cutRope(5));
+console.log(cutRope(7));

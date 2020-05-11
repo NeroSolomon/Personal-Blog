@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- 在双花括号中 -->
+    {{ message | capitalize }}
+    <div>
+      <p>test pay</p>
+      <button @click="onGetUrl">
+        get url
+      </button>
+    </div>
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/blueimp-md5/2.13.0/js/md5.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/moment.js/2.25.1/moment.min.js"></script>
+</html>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: 'addadsdas'
+    },
+    filters: {
+      capitalize: function (value) {
+        if (!value) return ''
+        value = value.toString()
+        return value.charAt(0).toUpperCase() + value.slice(1)
+      }
+    },
+    methods: {
+      onGetUrl() {
+        const doc = document.implementation.createDocument('', 'xml', null)
+        const xml = doc.documentElement
+
+        // add appid
+        const appid = doc.createElement('appid')
+        appid.appendChild(doc.createTextNode('wxc2d4185d764d6b75'))
+        xml.appendChild(appid)
+
+        // add mch_id
+        const mch_id = doc.createElement('mch_id')
+        mch_id.appendChild(doc.createTextNode('1579500851'))
+        xml.appendChild(mch_id)
+
+        // add nonce_str
+        const nonce_str = doc.createElement('nonce_str')
+        const randomStr = md5(Math.random() * 10)
+        nonce_str.appendChild(doc.createTextNode(randomStr))
+        xml.appendChild(nonce_str)
+
+        // add body
+        const body = doc.createElement('body')
+        body.appendChild(doc.createTextNode('MintegralSS-充值'))
+        xml.appendChild(body)
+
+        // add out_trade_no
+        const time = moment().format('YYYYMMDDHHmm')
+        const out_trade_no = doc.createElement('out_trade_no')
+        out_trade_no.appendChild(doc.createTextNode(time))
+        xml.appendChild(out_trade_no)
+
+        // add total_fee
+        const total_fee = doc.createElement('total_fee')
+        total_fee.appendChild(doc.createTextNode(88))
+        xml.appendChild(total_fee)
+
+        // add spbill_create_ip
+        const spbill_create_ip = doc.createElement('spbill_create_ip')
+        spbill_create_ip.appendChild(doc.createTextNode('10.192.178.72'))
+        xml.appendChild(spbill_create_ip)
+
+        // add notify_url
+        const notify_url = doc.createElement('notify_url')
+        notify_url.appendChild(
+          doc.createTextNode('http://www.weixin.qq.com/wxpay/pay.php')
+        )
+        xml.appendChild(notify_url)
+
+        // add trade_type
+        const trade_type = doc.createElement('trade_type')
+        trade_type.appendChild(doc.createTextNode('NATIVE'))
+        xml.appendChild(trade_type)
+
+        // add sign
+        const stringA = `appid=wxc2d4185d764d6b75&body=MintegralSS-充值&mch_id=1579500851&nonce_str=${randomStr}&notify_url=http://www.weixin.qq.com/wxpay/pay.php&out_trade_no=${time}&spbill_create_ip=10.192.178.72&total_fee=88&trade_type=NATIVE&key=7124bb1259e0f7fb2e60f63c1197274e`
+        const sign = doc.createElement('sign')
+        sign.appendChild(doc.createTextNode(md5(stringA).toUpperCase()))
+        xml.appendChild(sign)
+
+        this.getUrl(doc, this.onTestSuccess)
+      },
+      getUrl(doc, callback) {
+        const xhr = new XMLHttpRequest()
+        xhr.open('post', 'https://api.mch.weixin.qq.com/pay/unifiedorder')
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState == 4 && callback) {
+            callback(xhr.response)
+          }
+        }
+        xhr.setRequestHeader('Content-Type', 'text/xml')
+        xhr.send(doc)
+      },
+      onTestSuccess(response) {
+        console.log(response)
+      }
+    }
+  })
+</script>
