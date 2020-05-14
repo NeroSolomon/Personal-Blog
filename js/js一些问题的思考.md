@@ -138,7 +138,7 @@ function debounce(fun, ms) {
     const context = this;
     const args = arguments;
 
-    if (timer) clearTimeout(timer);
+    clearTimeout(timer);
 
     timer = setTimeout(() => {
       fun.apply(context, args)
