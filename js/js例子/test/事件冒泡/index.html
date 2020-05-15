@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    li {
+      margin: 10px 0;
+      background-color: gold;
+      height: 30px;
+    }
+  </style>
+</head>
+<body>
+  <ul id="ul">
+    <li>123</li>
+    <li>1231</li>
+    <li>1232</li>
+    <li>1233</li>
+    <li>1234</li>
+    <li>1235</li>
+    <li>1236</li>
+    <li>1237</li>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+  </ul>
+</body>
+<script>
+  window.onload = () => {
+    var ul = document.getElementById('ul')
+    ul.onclick = function(evnet) {
+      console.log(evnet.target)
+      ul.removeChild(evnet.target)
+    }
+  }
+</script>
+</html>
