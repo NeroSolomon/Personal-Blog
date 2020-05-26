@@ -11,4 +11,4 @@ function LastRemaining_Solution(n, m)
   }
 }
 
-console.log(LastRemaining_Solution(5, 2))
+console.log(LastRemaining_Solution(2, 2))
