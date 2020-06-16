@@ -99,10 +99,10 @@ test('the shopping list has beer on it', () => {
 })
 
 // 抛出错误
-test('throw error', () => {
-  function compileAndroidCode() {
-    throw new Error('you are using the wrong JDK');
-  }
+// test('throw error', () => {
+//   function compileAndroidCode() {
+//     throw new Error('you are using the wrong JDK');
+//   }
 
-  expect(compileAndroidCode()).throw(Error);
-})
+//   expect(compileAndroidCode()).throw(Error);
+// })
