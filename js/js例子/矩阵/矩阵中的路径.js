@@ -18,6 +18,7 @@ function hasPath(matrix, rows, cols, str) {
 }
 
 function hasPathCore(matrix, row, col, rows, cols, str, strIndex, visited) {
+  if (strIndex == str.length) return true;
   let hasPath = false;
   if (row < rows && col < cols && matrix[row * cols + col] == strIndex[strIndex] && !visited[row * cols + col]) {
     strIndex++;
