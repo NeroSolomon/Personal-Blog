@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 图表容器 DOM -->
+  <div id="container" style="width: 600px;height:400px;"></div>
+  <!-- 引入 highcharts.js -->
+  <script src="http://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
+  <script>
+    // 图表配置
+    var options = {
+      chart: {
+        type: 'bar' //指定图表的类型，默认是折线图（line）
+      },
+      title: {
+        text: '我的第一个图表' // 标题
+      },
+      xAxis: {
+        categories: ['苹果', '香蕉', '橙子'] // x 轴分类
+      },
+      yAxis: {
+        title: {
+          text: '吃水果个数' // y 轴标题
+        }
+      },
+      series: [{ // 数据列
+        name: '小明', // 数据列名
+        data: [1, 0, 4] // 数据
+      }, {
+        name: '小红',
+        data: [5, 7, 3]
+      }]
+    };
+    // 图表初始化函数
+    var chart = Highcharts.chart('container', options);
+  </script>
+  <script>
+    // portal new chart report 配置分析
+    function addLineChart(globalObj, elementID, title, subTitle, categories, xName, yName, seriesArr, unit) {
+      globalObj = new Highcharts.Chart({
+        chart: {
+          type: 'line', // 图表类型
+          zoomType: 'x', // 鼠标按x轴维度缩放
+          renderTo: elementID, // 渲染dom容器引用或id
+          marginRight: 0, // 右边距
+          marginBottom: 100 // 底部边距
+        },
+        credits: {
+          enabled: false // 不显示版权信息
+        },
+        title: {
+          text: title, // 标题文字
+          style: {
+            fontSize: '12px' // 文字大小
+          },
+          x: -20, // 水平偏移
+          y: 25 // 竖直偏移
+        },
+        xAxis: {
+          title: {
+            text: xName // x轴标题文字
+          },
+          categories: categories, // x轴坐标标签
+          labels: {
+            rotation: -45, // 坐标标签展示样式
+            align: 'right' // 右对齐
+          }
+        },
+        yAxis: {
+          title: {
+            text: yName // y轴标题文字
+          },
+          min: elementID.indexOf('profit') >= 0 ? null : 0, // 坐标轴的最小值
+          plotLines: [{
+            value: 0, // 标识线划分的位置
+            width: 1, // 标识线宽度
+            color: '#808080' // 标识线颜色
+          }]
+        },
+        tooltip: {
+          shared: true, // x值相同的不同折线是否共享悬浮框
+          crosshairs: true // x轴对应线，已改到xAxis.crosshair
+        },
+        plotOptions: {
+          series: {
+            cursor: 'pointer', // 光标形状
+            point: {
+              events: { // 监听事件
+                // 数据点点击事件
+                // 其中 e 变量为事件对象，this 为当前数据点对象
+                click: function (e) {
+                  //console.log('TODO: ', this.x, this.y, this.series.name);
+                  //alert("Want to check: \n" + this.series.name + " \n(" + this.x + ", " + this.y + ") ?\n\n Comming soon!");
+                  goMReportLite(this.series.name, this.x);
+                }
+              }
+            },
+            marker: { // hover样式
+              enabled: true, // 是否显示实圆点
+              radius: 3, // 半径
+              lineWidth: 1 //线条宽度
+            }
+          }
+        },
+        legend: {
+          layout: 'vertical', // 水平布局
+          align: 'right', // 向右对齐
+          verticalAlign: 'top', // 垂直对其
+          x: 'left', // 水平偏移
+          y: -10, // 垂直偏移
+          borderWidth: 0, // 边框宽度
+        },
+        series: seriesArr // 数据列
+      });
+    }
+
+    function goMReportLite() {
+      console.log(1)
+    }
+  </script>
+</body>
+
+</html>
