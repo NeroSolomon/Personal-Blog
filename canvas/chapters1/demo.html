@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+  </canvas>
+  <script>
+    var c=document.getElementById("myCanvas");
+    var ctx=c.getContext("2d");
+
+    // 绘制矩形
+    // ctx.fillStyle="#FF0000";
+    // ctx.fillRect(0,0,150,75);
+
+    // 画线条
+    // ctx.moveTo(0,0);
+    // ctx.lineTo(200,100);
+    // ctx.stroke();
+
+    // 画圆
+    // ctx.beginPath();
+    // ctx.arc(95,50,40,0,2*Math.PI);
+    // ctx.stroke();
+
+    // 写字
+    // ctx.font="30px Arial";
+    // ctx.fillText("Hello World",10,50);
+
+    // 渐变
+    // 创建渐变
+    // var grd=ctx.createLinearGradient(0,0,200,0);
+    // grd.addColorStop(0,"red");
+    // grd.addColorStop(1,"white");
+
+    // 填充渐变
+    // ctx.fillStyle=grd;
+    // ctx.fillRect(10,10,150,80);
+
+    // 径向渐变
+    var grd=ctx.createRadialGradient(75,50,5,90,60,100);
+    grd.addColorStop(0,"red");
+    grd.addColorStop(1,"white");
+
+    // 填充渐变
+    ctx.fillStyle=grd;
+    ctx.fillRect(10,10,150,80);
+
+    // jin xiang
+  </script>
+</body>
+</html>
