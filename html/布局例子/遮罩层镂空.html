@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .shadow {
+      position: absolute;
+      width: 170px;
+      height: 190px;
+      top: 260px;
+      left: 208px;
+      box-shadow: rgba(0, 0, 0, .6) 0 0 0 100vw;
+      background-color: transparent;
+    }
+
+    .border {
+      position: absolute;
+      width: 170px;
+      height: 190px;
+      top: 0;
+      left: 0;
+      border-left-width: 208px;
+      border-left-style: solid;
+      border-left-color: rgba(0, 0, 0, .6);
+      border-right-width: 970px;
+      border-right-style: solid;
+      border-right-color: rgba(0, 0, 0, .6);
+      border-top-width: 260px;
+      border-top-style: solid;
+      border-top-color: rgba(0, 0, 0, .6);
+      border-bottom-width: 253px;
+      border-bottom-style: solid;
+      border-bottom-color: rgba(0, 0, 0, .6);
+    }
+
+    .mask {
+      background-color: #000;
+      opacity: 0.4;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .cycle {
+      position: absolute;
+      z-index: 10;
+      top: 40px;
+      left: 300px;
+      border: 2px solid #ccc;
+      height: 200px;
+      width: 200px;
+      border-radius: 100%;
+    }
+
+    .pointer-none {
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 页面密密麻麻的布满A链接，想要你实现一个逻辑的圆，圆对用户不可见，圆心(a,b)半径为R，实现效果：圆内的链接可点击，圆外不可点击。 -->
+  <!-- <div class="shadow"></div> -->
+  <!-- <div class="border"></div> -->
+  <div class="mask pointer-none">
+    <!-- 实际上可以通过计算点击的位置是否在圆内，为mask添加pointer-none -->
+    <div class="cycle"></div>
+  </div>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a>
+  <a href="www.baidu.com">www.baidu.com</a><br>
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</html>
