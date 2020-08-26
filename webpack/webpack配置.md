@@ -228,3 +228,9 @@ new HtmlWebpackPlugin({
 ```html
 <html lang="en" data-version="<%= version %>"></html>
 ```
+
+## 动态引入组件
+```js
+import(/* webpackChunkName: "home" */ '../components/HomeView.js')
+```
+注释为webpack打包出的chunkname
