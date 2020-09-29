@@ -426,7 +426,7 @@
 <body>
   <div id="tpl-wrap" class="tpl-v2">
     <div id="banner" class="defimg">
-      <a id="open" class="defbtn">打开手机淘宝</a>
+      <a id="open" class="defbtn" target="__blank">打开手机淘宝</a>
       <a id="download" class="defbtn">下载手机淘宝</a>
     </div>
   </div>
@@ -435,12 +435,11 @@
     (function (win, cons) {
       function SmartTool() {
         this.query = this.__parseQuery()
-        cons.log('Query: ', this.query)
         this.finished = false
         this.startTime = null
         this.changeDuration = null
         this.__updateBtn()
-        this.__listenVisibilityChange()
+        this.__listentVisibilityChange()
       }
 
       SmartTool.prototype.__parseQuery = function () {
@@ -456,9 +455,8 @@
       };
 
       SmartTool.prototype.__updateBtn = function () {
-        console.log('i am here')
         var deeplink =
-          'tbopen://m.taobao.com/tbopen/index.html?source=auto&action=ali.open.nav&module=h5&bootImage=0&spm=2014.ugdhh.2200803434132.219696-20261-32896&bc_fl_src=growth_dhh_2200803434132_219696-20261-32896&materialid=219696&h5Url=https%3A%2F%2Fh5.m.taobao.com%2Fbcec%2Fdahanghai-jump.html%3Fspm%3D2014.ugdhh.2200803434132.219696-20261-32896%26bc_fl_src%3Dgrowth_dhh_2200803434132_219696-20261-32896'
+          'https://www.baidu.com'
         var marketUrl = this.query.market
         var openBtn = win.document.getElementById('open')
         openBtn && deeplink && openBtn.setAttribute('href', deeplink)
@@ -473,7 +471,6 @@
         if (!key) return
         var url = this.query[key]
         if (!url) {
-          cons.log('requestUrl: No ' + key)
           'function' == typeof callback && callback()
           return
         }
@@ -482,13 +479,11 @@
         img.onload = function () {
           if (true === flag) return
           flag = true
-          cons.log('requestUrl: Success', url)
           'function' == typeof callback && callback()
         }
         img.onerror = function () {
           if (true === flag) return
           flag = true
-          cons.log('requestUrl: Error', url)
           'function' == typeof callback && callback()
         }
         img.src = url
@@ -519,17 +514,17 @@
         if (deeplink) {
           win.location.href = serverUrl
         } else {
-          cons.log('redirect: No deeplink')
+          // cons.log('redirect: No deeplink')
         }
       };
 
       // on page visibility change
-      SmartTool.prototype.__listenVisibilityChange = function () {
-        window.document.addEventListener('visibilitychange', function() {
-          if (this.startTime && win.document.visibilityState === 'hidden') {
-            this.changeDuration = moment().diff(this.startTime)
-            console.log(this.changeDuration)
-            this.startTime = null
+      SmartTool.prototype.__listentVisibilityChange = function () {
+        var _self = this
+        win.document.addEventListener('visibilitychange', function() {
+          if (_self.startTime && win.document.visibilityState === 'hidden') {
+            _self.changeDuration = moment().diff(_self.startTime)
+            _self.startTime = null
           }
         })
       }
