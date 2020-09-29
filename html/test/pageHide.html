@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <a href="https://www.baidu.com" target="__blank" onclick="handleLinkClick()">Turn to taobao</a><br>
+  <span id="content"></span>
+  <script src="https://cdn.bootcdn.net/ajax/libs/moment.js/1.0.0/moment.min.js"></script>
+  <script>
+    const content = document.getElementById('content')
+    let start = null
+
+    window.onbeforeunload = function () {
+      const duration = moment().diff(start)
+      content.innerHTML = "unload, duration: " + duration
+    };
+
+    document.onvisibilitychange = function (e) {
+      if (document.visibilityState == 'hidden') {
+        const duration = moment().diff(start)
+        setTimeout(() => {
+          content.innerHTML = "visibility change, duration: " + duration
+        }, 10000)
+      }
+    }
+
+    function handleLinkClick() {
+      start = moment()
+    }
+  </script>
+</body>
+
+</html>
