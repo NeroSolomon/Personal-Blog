@@ -108,6 +108,7 @@ commom.js node服务端<br>
 2.为了异步IO不阻塞主线程，js将异步任务挂到任务队列中，先执行同步代码<br>
 3.等主线程中的同步代码执行完，才执行任务队列中的异步代码<br>
 4.异步代码分为微任务和宏任务，例如promise就是微任务，setTimeout就是宏任务，先执行微任务，再执行宏任务<br>
+[事件循环](./事件循环.md)
 
 ### 获取图片的原始宽高
 原始宽高：不受外部设置宽高影响，image.naturalWidth和image.naturalHeight
