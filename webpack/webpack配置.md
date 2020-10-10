@@ -239,3 +239,8 @@ import(/* webpackChunkName: "home" */ '../components/HomeView.js')
 webpack配置一级属性<br>
 子属性解析：<br>
 1. splitChunks 根据不同策略来分割打包出来的bundle，包括minSize，maxSize
+
+## performance
+文件的一些打包体积限制，例如：
+1. maxAssetSize
+2. maxEntrypointSize
