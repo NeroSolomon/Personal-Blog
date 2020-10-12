@@ -32,3 +32,5 @@ function swap(arr, i, j) {
 let arr = [8, 10, 6, 21, 8, 9, 5]
 quickSort(arr);
 console.log(arr);
+
+// 时间复杂度 O (nlogn)

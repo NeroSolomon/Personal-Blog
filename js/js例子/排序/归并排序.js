@@ -32,3 +32,5 @@ function merge(left, right) {
 let arr = [1, 10, 6, 21, 8, 9, 5]
 arr = mergeSort(arr);
 console.log(arr);
+
+// 时间复杂度 O(nlogn)

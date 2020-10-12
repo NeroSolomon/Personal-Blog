@@ -14,3 +14,5 @@ function bubbleSort(arr) {
 const arr = [1, 10, 6, 21, 8, 9, 5]
 bubbleSort(arr);
 console.log(arr);
+
+// 时间复杂度：O(n²)
