@@ -16,3 +16,6 @@ git revert 168a2cd -m 1 // 删除168a2cd的提交下的第一个
 ```
 
 ### git fetch --prune origin 清除fetch的缓存，用于远程分支delete但git branch仍能看到的情况
+
+### 通过tag拉新分支
+git branch [newBranch] [tag]
