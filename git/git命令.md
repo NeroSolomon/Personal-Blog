@@ -1,5 +1,8 @@
 ## git 命令
 
+### 学习网站
+[学习网站](https://learngitbranching.js.org/)
+
 ### git rebase
 合并多次commit
 
@@ -19,3 +22,16 @@ git revert 168a2cd -m 1 // 删除168a2cd的提交下的第一个
 
 ### 通过tag拉新分支
 git branch [newBranch] [tag]
+
+### ~
+通过git branch -f [branch] [hash/HEAD~^]不改动HEAD，索引和副本
+git checkout 、 reset则会改变三者
+
+### rebase
+rebase 会让树结构更易看，功能上和merge差不多
+
+### git fetch
+更新所有数据、pull只更新当前分支
+
+### git pull --rebase
+用git pull --rebase代替git pull，会使得graph更容易查看
