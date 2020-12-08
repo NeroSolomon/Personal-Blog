@@ -244,3 +244,8 @@ webpack配置一级属性<br>
 文件的一些打包体积限制，例如：
 1. maxAssetSize
 2. maxEntrypointSize
+
+## modules
+
+### rules
+1. eslint-loader，当存在eslint问题时，出现构建提示
