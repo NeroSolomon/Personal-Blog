@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DEMO</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no">
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <script src="js/lib/jquery/jquery-2.1.4.js"></script>
+  <style>
+    .loading {
+      background: #FF6100;
+      height: 5px;
+      position: fixed;
+      top: 0;
+      z-index: 99999
+    }
+  </style>
+</head>
+
+<body>
+  <div class="loading"></div>
+  <div id="header">
+    页头部分
+  </div>
+  <script type="text/javascript">
+    $('.loading').animate({
+      'width': '33%'
+    }, 50);
+    //第一个进度节点
+  </script>
+  <div id="mainpage">
+    左侧内容
+  </div>
+  <script type="text/javascript">
+    $('.loading').animate({
+      'width': '55%'
+    }, 50);
+    //第二个进度节点
+  </script>
+  <div id="sider">
+    右边侧栏
+  </div>
+  <script type="text/javascript">
+    $('.loading').animate({
+      'width': '80%'
+    }, 50);
+    //第三个进度节点
+  </script>
+  <div id="footer">
+    页脚部分
+  </div>
+  <script type="text/javascript">
+    $('.loading').animate({
+      'width': '100%'
+    }, 50);
+    //第四个进度节点
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      $('.loading').fadeOut();
+    });
+  </script>
+</body>
+
+</html>
