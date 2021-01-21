@@ -35,3 +35,6 @@ export default {
   ]
 }
 ```
+
+## tree shaking
+默认对es6语法开启，所以要注意typescript的target是啥
