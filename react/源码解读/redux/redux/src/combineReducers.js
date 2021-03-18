@@ -57,6 +57,7 @@ function getUnexpectedStateShapeWarningMessage(inputState, reducers, action, une
 function assertReducerShape(reducers) {
   Object.keys(reducers).forEach(key => {
     const reducer = reducers[key]
+    // 获得初始state
     const initialState = reducer(undefined, { type: ActionTypes.INIT })
 
     if (typeof initialState === 'undefined') {
@@ -105,12 +106,14 @@ export default function combineReducers(reducers) {
   for (let i = 0; i < reducerKeys.length; i++) {
     const key = reducerKeys[i]
 
+    // 检查数据
     if (process.env.NODE_ENV !== 'production') {
       if (typeof reducers[key] === 'undefined') {
         warning(`No reducer provided for key "${key}"`)
       }
     }
 
+    // 复制
     if (typeof reducers[key] === 'function') {
       finalReducers[key] = reducers[key]
     }
@@ -124,11 +127,13 @@ export default function combineReducers(reducers) {
 
   let shapeAssertionError
   try {
+    // 继续检查reducers合法性
     assertReducerShape(finalReducers)
   } catch (e) {
     shapeAssertionError = e
   }
 
+  // 返回一个reducer
   return function combination(state = {}, action) {
     if (shapeAssertionError) {
       throw shapeAssertionError
