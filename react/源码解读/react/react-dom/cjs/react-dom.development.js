@@ -21074,6 +21074,7 @@ function legacyRenderSubtreeIntoContainer(parentComponent, children, container, 
   var root = container._reactRootContainer;
   if (!root) {
     // Initial mount
+    // forceHydrate=false
     root = container._reactRootContainer = legacyCreateRootFromDOMContainer(container, forceHydrate);
     if (typeof callback === 'function') {
       var originalCallback = callback;
