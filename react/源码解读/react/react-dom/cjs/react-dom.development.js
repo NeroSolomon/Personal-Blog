@@ -4021,6 +4021,11 @@ function shallowEqual(objA, objB) {
  */
 
 
+/**
+ * @description: 获得fiber引用
+ * @param {*} key
+ * @return {*}
+ */
 function get(key) {
   return key._reactInternalFiber;
 }
@@ -11152,9 +11157,11 @@ var classComponentUpdater = {
   isMounted: isMounted,
   enqueueSetState: function (inst, payload, callback) {
     var fiber = get(inst);
+    // 当前时间
     var currentTime = requestCurrentTime();
+    // 终止时间
     var expirationTime = computeExpirationForFiber(currentTime, fiber);
-
+    // update对象
     var update = createUpdate(expirationTime);
     update.payload = payload;
     if (callback !== undefined && callback !== null) {
@@ -11165,6 +11172,7 @@ var classComponentUpdater = {
     }
 
     flushPassiveEffects();
+    // 更新链表
     enqueueUpdate(fiber, update);
     scheduleWork(fiber, expirationTime);
   },
@@ -16129,6 +16137,7 @@ function createUpdate(expirationTime) {
 
 function appendUpdateToQueue(queue, update) {
   // Append the update to the end of the list.
+  // 改动链表指针
   if (queue.lastUpdate === null) {
     // Queue is empty
     queue.firstUpdate = queue.lastUpdate = update;
@@ -16148,6 +16157,7 @@ function enqueueUpdate(fiber, update) {
     queue1 = fiber.updateQueue;
     queue2 = null;
     if (queue1 === null) {
+      // 没有就创建
       queue1 = fiber.updateQueue = createUpdateQueue(fiber.memoizedState);
     }
   } else {
@@ -16156,6 +16166,7 @@ function enqueueUpdate(fiber, update) {
     queue2 = alternate.updateQueue;
     if (queue1 === null) {
       if (queue2 === null) {
+        // 没有就创建
         // Neither fiber has an update queue. Create new ones.
         queue1 = fiber.updateQueue = createUpdateQueue(fiber.memoizedState);
         queue2 = alternate.updateQueue = createUpdateQueue(alternate.memoizedState);
