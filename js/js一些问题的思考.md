@@ -253,3 +253,19 @@ requestAnimation自动适配屏幕的刷新频率，避免掉帧，由系统来�
   var URL = document.URL;
   window.external.addFavorite(url, title);
 ```
+
+## responseType 可选的参数
+有："text"、"arraybuffer"、"blob" 或 "document"
+
+## arraybuffer 和 blod 区别及互转
+```text
+ArrayBuffer对象用来表示通用的、固定长度的原始二进制数据缓冲区。
+ 
+Blob (binary large object)，他表示一个不可变、原始数据的类文件对象，Blob.size：包含数据的大小，Blob.type：表明该 Blob 对象所包含数据的 MIME 类型。
+ 
+blob类型只有slice方法，用于返回一个新的 Blob对象，包含了源 Blob对象中指定范围内的数据。
+ 
+对比发现，ArrayBuffer的数据，是可以按照字节去操作的，而Blob的只能作为一个整的对象去处理。
+ 
+所以说，ArrayBuffer相比Blob更接近真实的二进制，更底层。
+```
