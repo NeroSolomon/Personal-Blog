@@ -27,11 +27,47 @@ output: {
 误区：一开始我以为webpack-dev-server命令也会生成dist目录，但其实不会，服务器是会读取内存里的文件吗，这点和webpack命令不同<br>
 还有一个坑：假如配置了contentBase: './dist'，而没有dist目录的话，会没有展示，假如没有dist目录，则需要以下配置
 ```javascript
--  contentBase: './dist',
-+  historyApiFallback: {
-+    index: '/dist/index.html'
-+  }
+  {
+    devServer: {
+-     contentBase: './dist',
++     historyApiFallback: {
++       index: '/dist/index.html'
++     }
+    }
+  }
+
 ```
+
+### devServer.proxy
+配置详解：
+```js
+{
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000', // 现在，对 /api/users 的请求会将请求代理到 http://localhost:3000/api/users
+        pathRewrite: { '^/api': '' }, // 如果不希望传递/api，则需要重写路径：
+        secure: false, // 默认情况下，将不接受在 HTTPS 上运行且证书无效的后端服务器。 如果需要，可以这样修改配置
+        bypass: function (req, res, proxyOptions) { // 有时不想代理所有内容。 可以基于函数的返回值绕过代理。
+          if (req.headers.accept.indexOf('html') !== -1) {
+            console.log('Skipping proxy for browser request.');
+            return '/index.html';
+          }
+        },
+        changeOrigin: true, // 默认情况下，代理时会保留主机头的来源，可以将 changeOrigin 设置为 true 以覆盖此行为。
+      }
+    },
+    // 如果想将多个特定路径代理到同一目标，则可以使用一个或多个带有 context 属性的对象的数组：
+    proxy: [
+      {
+        context: ['/auth', '/api'],
+        target: 'http://localhost:3000',
+      },
+    ],
+  }
+}
+```
+1. 
 
 ## 如何实现webpack的监听及热更新
 1.首先需要browser-sync来将更新反应到浏览器上<br>
