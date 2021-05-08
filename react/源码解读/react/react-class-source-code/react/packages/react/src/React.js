@@ -55,6 +55,7 @@ const React = {
 
   Fragment: REACT_FRAGMENT_TYPE,
   StrictMode: REACT_STRICT_MODE_TYPE,
+  // Suspense在内部未完全加载前，都会走fallback
   Suspense: REACT_SUSPENSE_TYPE,
 
   createElement: __DEV__ ? createElementWithValidation : createElement,
