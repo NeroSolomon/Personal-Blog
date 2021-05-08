@@ -68,11 +68,15 @@ const React = {
 };
 
 if (enableStableConcurrentModeAPIs) {
+  // ConcurrentMode 任务调度
   React.ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
   React.Profiler = REACT_PROFILER_TYPE;
 } else {
   React.unstable_ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
   React.unstable_Profiler = REACT_PROFILER_TYPE;
 }
+
+// ConcurrentMode 的调用方式：<ConcurrentMode><Child /></ConcurrentMode>
+// 在ConcurrentMode下的组件都是低优先级处理的组件
 
 export default React;
