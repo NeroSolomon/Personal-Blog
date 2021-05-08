@@ -59,7 +59,7 @@
 
       if (!__wm) {
         container.style.position = 'relative';
-        container.insertBefore(watermarkDiv, container.firstChild);
+        container.appendChild(watermarkDiv);
       }
 
       const MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
