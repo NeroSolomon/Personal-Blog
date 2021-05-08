@@ -63,6 +63,9 @@ Component.prototype.setState = function(partialState, callback) {
     'setState(...): takes an object of state variables to update or a ' +
       'function which returns an object of state variables.',
   );
+  // enqueueSetState的实现在react-dom里
+  // 为什么这样做？
+  // 因为不同平台 web/native 的实现不一样，抽离到外面可以通过参数化的方式处理
   this.updater.enqueueSetState(this, partialState, callback, 'setState');
 };
 

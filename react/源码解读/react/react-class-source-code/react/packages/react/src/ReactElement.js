@@ -241,6 +241,8 @@ export function createElement(type, config, children) {
       }
     }
   }
+
+  // 将处理好的参数传给构建函数
   return ReactElement(
     type,
     key,

@@ -14,6 +14,7 @@ export function createRef(): RefObject {
     current: null,
   };
   if (__DEV__) {
+    // 不可添加新属性，不能配置属性
     Object.seal(refObject);
   }
   return refObject;
