@@ -149,6 +149,7 @@ function traverseAllChildrenImpl(
   const nextNamePrefix =
     nameSoFar === '' ? SEPARATOR : nameSoFar + SUBSEPARATOR;
 
+  // 如果多个节点，循环每个节点
   if (Array.isArray(children)) {
     for (let i = 0; i < children.length; i++) {
       child = children[i];
@@ -293,6 +294,7 @@ function mapSingleChildIntoContext(bookKeeping, child, childKey) {
   const {result, keyPrefix, func, context} = bookKeeping;
 
   let mappedChild = func.call(context, child, bookKeeping.count++);
+  // 是数组继续递归
   if (Array.isArray(mappedChild)) {
     mapIntoWithKeyPrefixInternal(mappedChild, result, childKey, c => c);
   } else if (mappedChild != null) {
@@ -317,6 +319,7 @@ function mapIntoWithKeyPrefixInternal(children, array, prefix, func, context) {
   if (prefix != null) {
     escapedPrefix = escapeUserProvidedKey(prefix) + '/';
   }
+  // 从对象池中获得引用
   const traverseContext = getPooledTraverseContext(
     array,
     escapedPrefix,
@@ -340,6 +343,8 @@ function mapIntoWithKeyPrefixInternal(children, array, prefix, func, context) {
  * @param {*} context Context for mapFunction.
  * @return {object} Object containing the ordered map of results.
  */
+
+// 从这开始看
 function mapChildren(children, func, context) {
   if (children == null) {
     return children;
