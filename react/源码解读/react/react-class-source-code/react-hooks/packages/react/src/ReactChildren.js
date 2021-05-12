@@ -5,6 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+// reference: https://react.jokcy.me/book/api/react-children.html
+// React.children.map 会将children扁平化为一层数组
+
+
 import invariant from 'shared/invariant';
 import warning from 'shared/warning';
 import {
