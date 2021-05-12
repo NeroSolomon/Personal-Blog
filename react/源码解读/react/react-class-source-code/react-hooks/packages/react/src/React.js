@@ -66,6 +66,7 @@ const React = {
   memo,
 
   Fragment: REACT_FRAGMENT_TYPE,
+  // 所有的节点都按照规范，例如过期声明周期，会被提醒
   StrictMode: REACT_STRICT_MODE_TYPE,
   Suspense: REACT_SUSPENSE_TYPE,
 

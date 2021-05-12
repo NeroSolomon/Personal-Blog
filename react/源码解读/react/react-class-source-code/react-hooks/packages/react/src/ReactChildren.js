@@ -63,6 +63,7 @@ function getPooledTraverseContext(
   mapContext,
 ) {
   if (traverseContextPool.length) {
+    // 当多次渲染的时候通过对象池，重复利用对象，减少对象声明和开销
     const traverseContext = traverseContextPool.pop();
     traverseContext.result = mapResult;
     traverseContext.keyPrefix = keyPrefix;
