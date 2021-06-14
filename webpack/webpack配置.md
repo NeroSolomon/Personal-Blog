@@ -285,3 +285,43 @@ webpack配置一级属性<br>
 
 ### rules
 1. eslint-loader，当存在eslint问题时，出现构建提示
+
+### resolve
+alias配置路径，例如：
+```js
+{
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'code/react-ui'),
+    },
+  },
+}
+```
+
+elsint配合：
+```js
+settings: {
+  'import/resolver': {
+    alias: {
+      map: [
+        ['@', './code/react-ui/'],
+      ],
+    }
+  }
+}
+
+// 安装
+//  "eslint-import-resolver-alias": "^1.1.2",
+//  "eslint-plugin-import": "^2.22.1",
+```
+
+jsconfig.json / tsconfig.json
+```json
+{
+   "compilerOptions": {
+      "paths": {
+        "@": ["./code/react-ui/"]
+      }
+    },
+}
+```
