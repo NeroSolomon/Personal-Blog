@@ -269,3 +269,6 @@ blob类型只有slice方法，用于返回一个新的 Blob对象，包含了源
  
 所以说，ArrayBuffer相比Blob更接近真实的二进制，更底层。
 ```
+
+### websocket 带cookie
+参考issue：https://github.com/websockets/ws/issues/473

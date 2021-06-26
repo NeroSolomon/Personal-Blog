@@ -21,3 +21,21 @@ var a = {name:'hehe',age:10};
 JSON.stringify(a)
 // '{"name":"hehe","age":10}'
 ```
+
+## @babel/cli
+Babel附带了一个内置的CLI，可以用来从命令行编译文件。
+
+## @babel/core
+babel-core 的作用是把 js 代码分析成 ast ，再转换为低版本的js
+
+## @babel/plugin-proposal-class-properties
+转换class
+
+## @babel/plugin-proposal-object-rest-spread
+编辑rest对象到es5
+
+## @babel/preset-env
+各环境的babel预设
+
+## @babel/preset-react
+Babel preset for all React plugins.

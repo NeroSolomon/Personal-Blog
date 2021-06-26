@@ -34,3 +34,7 @@ export default {
 2. beta版本：`$ npm version prerelease`  `$ npm publish --tag beta`
 3. 修改版本版本号
 3. 正式版本：`$ npm publish`
+
+
+### 基于antd封装npm库
+https://zhuanlan.zhihu.com/p/80754775

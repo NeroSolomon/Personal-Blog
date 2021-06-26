@@ -325,3 +325,77 @@ jsconfig.json / tsconfig.json
     },
 }
 ```
+
+### output
+
+#### library
+将bundle打包成一个对象
+
+1. 假如index.js 长这样
+```js
+module.exports = 'hello world'
+```
+
+2. webpack默认打包出是这样的
+```js
+(function () {
+  return 'hello world'
+})()
+```
+假如我们想拿到hello world，则没有办法。
+
+3. 如果想拿到hello word，则需要配置一个对象接收它
+```js
+{
+  output: {
+    name: 'result'
+  }
+}
+```
+
+4. 打包出来的时候长这样
+```js
+var result = (function () {
+  return 'hello world'
+})()
+```
+
+5. 我们可以这样使用
+```html
+<body>
+  <script src="./dist/bundle.js"></script>
+  <script>
+    console.log(result)
+  </script>
+</body>
+```
+
+6. 假如我们想在commom.js中使用
+```js
+{
+  output: {
+    name: 'result',
+    type: 'commonjs2'
+  }
+}
+```
+
+7. 打包后结果是
+```js
+module.exports = (function () {
+  return 'hello world'
+})()
+```
+
+8. 使用方法
+```js
+import result from './bundle'
+
+console.log(result)
+```
+
+##### name
+对象名
+
+##### type
+将对象打包到哪个环境 global/window/umd，umd：所有环境都能使用
