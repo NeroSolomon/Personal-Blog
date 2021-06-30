@@ -399,3 +399,6 @@ console.log(result)
 
 ##### type
 将对象打包到哪个环境 global/window/umd，umd：所有环境都能使用
+
+#### Module Federation
+参考链接：https://zhuanlan.zhihu.com/p/144267429

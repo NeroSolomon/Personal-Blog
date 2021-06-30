@@ -39,3 +39,25 @@ Normalize：会根据各个浏览器的不同保留有用的浏览器特色样�
 
 ### flex布局
 [笔记](./flex布局.md)
+
+### 如何生成bootstrap的 mr4/8/10 样式
+```less
+@0px: 0px;
+.margin-loop(@list, @i: 1, @val: extract(@list, @i)) when (length(@list)>=@i) {
+    .ml@{val} {
+        margin-left: @val + @0px;
+    }
+    .mr@{val} {
+        margin-right: @val + @0px;
+    }
+    .mt@{val} {
+        margin-top: @val + @0px;
+    }
+    .mb@{val} {
+        margin-bottom: @val + @0px;
+    }
+    .margin-loop(@list, (@i+1));
+}
+@marginValue: 4 8 10 12 15 16 20 24 32;
+.margin-loop(@marginValue);
+```
