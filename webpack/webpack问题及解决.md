@@ -38,3 +38,10 @@ export default {
 
 ## tree shaking
 默认对es6语法开启，所以要注意typescript的target是啥
+
+## runtime
+是指运行中的代码
+
+形如import('abc').then(res=>{})这种异步加载的代码，在webpack中即为运行时代码。
+
+在VueCli工程中常见的异步加载路由即为runtime代码

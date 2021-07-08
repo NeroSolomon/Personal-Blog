@@ -402,3 +402,9 @@ console.log(result)
 
 #### Module Federation
 参考链接：https://zhuanlan.zhihu.com/p/144267429
+
+### externals
+
+externals 配置选项提供了「从输出的 bundle 中排除依赖」的方法。
+
+相反，所创建的 bundle 依赖于那些存在于用户环境(consumer's environment)中的依赖
