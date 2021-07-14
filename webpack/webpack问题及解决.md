@@ -37,7 +37,15 @@ export default {
 ```
 
 ## tree shaking
-默认对es6语法开启，所以要注意typescript的target是啥
+默认对es6语法开启，但需要在package.json中通过以下设置，排除副作用
+```json
+{
+  "sideEffects": false, //所有文件没有副作用，可以排除未引用但
+  "sideEffects": ["./src/index.js"] // index.js有副作用，不能排除
+}
+```
+
+什么是副作用，就是import的函数中有对未import的变量的引用
 
 ## runtime
 是指运行中的代码

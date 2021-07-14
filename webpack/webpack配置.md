@@ -408,3 +408,8 @@ console.log(result)
 externals 配置选项提供了「从输出的 bundle 中排除依赖」的方法。
 
 相反，所创建的 bundle 依赖于那些存在于用户环境(consumer's environment)中的依赖
+
+### dll
+打包缓存
+
+参考链接：https://www.cnblogs.com/skychx/p/webpack-dllplugin.html
