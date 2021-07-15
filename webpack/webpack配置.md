@@ -413,3 +413,15 @@ externals 配置选项提供了「从输出的 bundle 中排除依赖」的方�
 打包缓存
 
 参考链接：https://www.cnblogs.com/skychx/p/webpack-dllplugin.html
+
+### 使用ESM
+
+将模块标记为 ESM 
+
+默认情况下，webpack 将自动检测文件是 ESM 还是其他模块系统。
+
+Node.js 通过设置 package.json 中的属性来显式设置文件模块类型。 
+
+在 package.json 中设置 "type": "module" 会强制 package.json 下的所有文件使用 ECMAScript 模块。 
+
+设置 "type": "commonjs" 将会强制使用 CommonJS 模块。
