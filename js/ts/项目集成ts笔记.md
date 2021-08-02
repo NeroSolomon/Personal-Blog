@@ -14,6 +14,7 @@
 添加typing.d.ts
 ```js
 declare module '*.module.scss' {
+  // 告诉ts，这类文件的类型
   const classes: { readonly [key: string]: string }
   export default classes
 }

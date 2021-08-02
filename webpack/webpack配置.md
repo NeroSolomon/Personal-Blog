@@ -326,6 +326,10 @@ jsconfig.json / tsconfig.json
 }
 ```
 
+#### resolve.modules
+告诉 webpack 解析模块时应该搜索的目录
+如果你想要添加一个目录到模块搜索目录，此目录优先于 node_modules/ 搜索
+
 ### output
 
 #### library
@@ -425,3 +429,32 @@ Node.js 通过设置 package.json 中的属性来显式设置文件模块类型�
 在 package.json 中设置 "type": "module" 会强制 package.json 下的所有文件使用 ECMAScript 模块。 
 
 设置 "type": "commonjs" 将会强制使用 CommonJS 模块。
+
+### 预置依赖
+可以通过预置依赖的方式，直接在项目中引入第三方库，无需在代码文件中import
+```js
+{
+  plugins: [
+    new webpack.ProvidePlugin({
+      _: 'lodash',
+    }),
+  ]
+}
+```
+
+可以更细力度预置，预置一个文件
+```js
+{
+  module: {
+    rules: [
+      {
+        test: require.resolve('./src/index.js'),
+        use: 'imports-loader?wrapper=window',
+      },
+    ],
+  }
+}
+```
+
+
+
