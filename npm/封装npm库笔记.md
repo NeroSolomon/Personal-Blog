@@ -226,9 +226,35 @@ export default TooltipButton
 
 ```
 
-6. 打包
+6. 使用 yalc 进行本地调试
+> yalc 是一个可以在本地模拟 npm package 发布环境的工具。yalc 主要本地化了一个 npm 的存储库，通过 yalc publish 可以把构建的产物发布到本地。通过 yalc add <pkg> 可以达到 npm install <pkg> 或 yarn add <pkg> 的效果。
 
-7. 发布
+step 1: 全局安装yalc
+```
+yarn global add yalc
+```
+
+step 2: 在组件目录下
+```
+# build package
+yarn build
+
+# 发布
+yalc publish
+```
+
+step 3: 在使用项目下
+```
+# 引用package
+yalc add my-component-package
+
+# 更新引用package的依赖
+yarn
+```
+
+7. 打包
+
+8. 发布
 
 Q&A：
 
