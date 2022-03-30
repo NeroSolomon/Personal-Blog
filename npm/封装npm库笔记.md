@@ -265,3 +265,17 @@ Q&A：
   而外部库的node_modules中也含有react，则导致两份react同时存在，导致报错
 
   所以，我们本地link测试时，记得先把组件库的node_modules删除，模仿npm环境
+
+2. 为啥设置了externals还会打包antd
+留意一下webpack rules 和 babelrc 中是否有设计到antd的打包设置，例如：`["import", { "libraryName": "antd", "style": true }],`
+
+3. 如果我希望组件库里独立维护一份antd，又不希望污染全局，怎么设置
+
+    - 组件库中安装antd起别名：yarn add ax-ant@npm:antd
+    - 通过antd的ConfigProvider设置prefixCls，让组件中的className前缀改变
+    - 设置webpack less loader 的 options，将打包出的css改变前缀
+    ```
+      modifyVars: {
+        "@ant-prefix": "ax-ant",
+      }
+    ```
