@@ -18,18 +18,10 @@ git revert 168a2cd // 删除168a2cd的提交
 git revert 168a2cd -m 1 // 删除168a2cd的提交下的第一个
 ```
 
-#### revert 多个
-假如git commit 链是
-
-A -> B -> C -> D 
-
-如果想把B，C，D都给revert，除了一个一个revert之外，还可以使用range revert
-
-git revert B^..D 
-
-这样就把B,C,D都给revert了，变成：
-
-A-> B ->C -> D -> D'-> C' -> B'
+revert多个
+```
+git revert commitB^..commitA
+```
 
 ### git fetch --prune origin 清除fetch的缓存，用于远程分支delete但git branch仍能看到的情况
 
