@@ -33,6 +33,18 @@ docker push xxxxx:cypress
 stages:
   - test
 
+variables:
+  CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache/Cypress"
+
+# 缓存参考：https://gitlab.com/cypress-io/cypress-example-docker-gitlab/-/blob/master/.gitlab-ci.yml
+cache:
+  key:
+    files:
+      - package.json
+  paths:
+    - node_modules/
+    - cache/Cypress
+
 test:
   tags:
     - gpxrunner                                               # 使用tag为docker的runner触发构建
