@@ -74,3 +74,26 @@ EXPOSE 4000
 ENTRYPOINT ["/home/gpx/sh/service.sh"]
 
 ```
+
+## artifacts
+```yaml
+  artifacts: # 存在gitlab的文件
+    when: always
+    paths:
+      - cypress/videos/**/*.mp4
+      - cypress/screenshots/**/*.png
+      - cypress/report/
+    expire_in: 1 day # 过期时间
+```
+
+
+## cache
+```yaml
+cache:
+  key:
+    files:
+      - package.json # 此文件改变后更新cache
+  paths:
+    - node_modules/
+    - cache/Cypress
+```
