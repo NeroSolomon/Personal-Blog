@@ -83,6 +83,7 @@ ENTRYPOINT ["/home/gpx/sh/service.sh"]
       - cypress/videos/**/*.mp4
       - cypress/screenshots/**/*.png
       - cypress/report/
+      - coverage
     expire_in: 1 day # 过期时间
 ```
 
