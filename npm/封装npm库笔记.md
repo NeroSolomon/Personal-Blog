@@ -30,6 +30,7 @@ export default {
 - peerDependencies: 注明引用这个库，项目需要安装的依赖
 
 ### 上传到npm库
+1. 设置npm私库：`npm config set xxx`
 1. 登录你的库
 2. beta版本：`$ npm version prerelease`  `$ npm publish --tag beta`
 3. 修改版本版本号
