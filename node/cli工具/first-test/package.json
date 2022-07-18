@@ -10,5 +10,8 @@
     "mycli": "./index.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^9.4.0"
+  }
 }
