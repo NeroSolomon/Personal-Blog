@@ -3,6 +3,9 @@
 ### vue的.native是什么
 .native是给组件绑定原生事件的方法，例如说绑定一个封装好的button组件的click方法，发现不起作用。就需要使用@click.native
 
+### 客户端渲染
+页面在 JavaScript，CSS 等资源文件加载完毕后开始渲染，路由为客户端路由，也就是我们经常谈到的 SPA（Single Page Application）。
+
 ### 什么是服务端渲染
 1.服务端渲染就是客户端请求浏览器，浏览器请求后端，后端返回html资源
 2.优点：<br>
@@ -12,6 +15,9 @@
       a.加重服务端的负担<br>
       b.只能执行到Mounted的生命钩子<br>
 4.参考网址：[参考](https://www.jianshu.com/p/10b6074d772c)
+
+### 同构渲染
+英文表述为 Isomorphic 或 Universal，即编写的 JavaScript 代码可同时运行于浏览器及 Node.js 两套环境中，用服务端渲染来提升首屏的加载速度，首屏之后的路由由客户端控制，即在用户到达首屏后，整个应用仍是一个 SPA。
 
 ### vue中，如果在实例创建之后添加新的属性到实例上，它不会触发视图更新
 ```

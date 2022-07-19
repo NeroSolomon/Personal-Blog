@@ -7,12 +7,14 @@ console.log('开始测试')
 program.version(require('./package').version, '-v, --version', 'cli的版本')
 
 // 设置选项
-program.option('-d, --debug', '调试一下').option('-l, --list', '测试一下').action((opts, command) => {
+program.option('-d, --debug', '调试一下').option('-l, --list', '测试一下', (value) => value).action((opts, command) => {
     // 进行逻辑处理
     if (opts.debug) {
         console.log('调试成功')
         console.log(require('./data.json').val)
     } else if (opts.list) {
+        console.log(command.args[0])
+        console.log(JSON.stringify(opts))
         console.log('测试成功')
     }
 })
