@@ -70,6 +70,18 @@ async def InsertUser(user: CreateUser):
     return {"code":"0002","message":"数据库异常"}
   return {"code":"0000","message":"添加成功"}
 
+# 哪找user_id查询
+@app.get("/user/{user_id}")
+async def queryUserByUserId(user_id: int):
+  try:
+    user = session.query(User).filter(User.userid==user_id).first()
+    session.close()
+    if user:
+      return {"code":"0000","message":"请求成功","data":user}
+    else:
+      return {"code":"0001","message":"查询无结果"}
+  except ArithmeticError:
+      return {"code":"0002","message":"数据库异常"}
 
 if __name__ == '__main__':
     import uvicorn
