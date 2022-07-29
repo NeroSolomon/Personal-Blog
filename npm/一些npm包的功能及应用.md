@@ -39,3 +39,12 @@ babel-core 的作用是把 js 代码分析成 ast ，再转换为低版本的js
 
 ## @babel/preset-react
 Babel preset for all React plugins.
+
+## patch-package
+可以改动node_modules中的依赖包，并不随node_modules的删除失效：https://blog.csdn.net/weixin_42232325/article/details/122452729
+
+1. 安装：npm i patch-package
+2. 修改package.json下的script：“postinstall”: “patch-package”
+3. 修改依赖包源码
+4. 执行命令：npx patch-package 【依赖包名】，会发现生成一个文件
+5. 这时删除依赖包重新下载，发现改动依旧存在
