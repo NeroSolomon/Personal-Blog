@@ -83,6 +83,20 @@ async def queryUserByUserId(user_id: int):
   except ArithmeticError:
       return {"code":"0002","message":"数据库异常"}
 
+@app.delete("/user/deleteUser/{user_id}")
+async def deleteUser(user_id: int):
+    try:
+        user1 = session.query(User).filter(User.userid == user_id).first()
+        if user1:
+          session.delete(user1)
+          session.commit()
+          session.close()
+          return {"code": "0000", "message": "删除成功"}
+        else:
+          return {"code": "0001", "message": "参数错误"}
+    except ArithmeticError:
+        return {"code": "0002", "message": "数据库错误"}
+
 if __name__ == '__main__':
     import uvicorn
     uvicorn.run(app=app, host="127.0.0.1", port=8000, debug=True)
