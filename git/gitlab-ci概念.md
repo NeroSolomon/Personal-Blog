@@ -1,4 +1,5 @@
 ## CI/CD pipeline
+入门：https://juejin.cn/post/6844904131778330637
 
 GitLab 中默认开启了 Gitlab CI/CD 的支持，且使用 YAML 文件 .gitlab-ci.yml 来管理项目构建配置。该文件需要存放于项目仓库的根目录（默认路径，可在 [GitLab Pipeline settings](https://docs.gitlab.com/ee/ci/pipelines/settings.html#custom-ci-configuration-path) 中修改），它定义该项目的 CI/CD 如何配置。所以，我们只需要在.gitlab-ci.yml配置文件中定义流水线的各个阶段，以及各个阶段中的若干作业（任...
 1CI/CD pipeline
