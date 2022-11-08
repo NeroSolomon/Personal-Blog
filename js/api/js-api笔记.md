@@ -25,3 +25,7 @@ readystate
 3. 2：调用send方法
 4. 3：正在接收数据，但还没接收完
 5. 4：接收完数据
+
+
+## MutationObserver
+监听dom节点变化
