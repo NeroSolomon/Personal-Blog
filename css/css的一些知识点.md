@@ -65,3 +65,10 @@ Normalize：会根据各个浏览器的不同保留有用的浏览器特色样�
 ### GPU加速
 通过transform来启用GPU加速，跳过重排重绘阶段
 参考示例：https://mp.weixin.qq.com/s/ncrtEDvJJU2b6iGIpl2ELw
+
+### padding-top
+padding-top方法实现响应式背景图片
+
+padding-top = (height/width) * 100%
+
+可以撑开内容区域，并随视口宽度变化
