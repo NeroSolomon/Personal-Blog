@@ -48,3 +48,6 @@ Babel preset for all React plugins.
 3. 修改依赖包源码
 4. 执行命令：npx patch-package 【依赖包名】，会发现生成一个文件
 5. 这时删除依赖包重新下载，发现改动依旧存在
+
+## tailwindcss
+识别html的类名，生成对应css
