@@ -51,3 +51,6 @@ Babel preset for all React plugins.
 
 ## tailwindcss
 识别html的类名，生成对应css
+
+## @hello-pangea/dnd
+拖拽包
