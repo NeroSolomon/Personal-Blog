@@ -72,3 +72,17 @@ padding-top方法实现响应式背景图片
 padding-top = (height/width) * 100%
 
 可以撑开内容区域，并随视口宽度变化
+
+
+### :root
+指html
+
+### prefers-color-scheme
+浏览器主题：
+```css
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include dark;
+  }
+}
+```
