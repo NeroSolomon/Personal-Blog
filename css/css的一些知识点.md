@@ -77,6 +77,22 @@ padding-top = (height/width) * 100%
 ### :root
 指html
 
+### 全局属性
+```css
+:root {
+  --main-bg-color: brown;
+}
+
+.one {
+  color: white;
+  background-color: var(--main-bg-color);
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
+```
+
 ### prefers-color-scheme
 浏览器主题：
 ```css
