@@ -61,3 +61,36 @@ core-js 它是JavaScript标准库的 polyfill（垫片/补丁）, 新功能的es
 
 ### 为什么使用了babel-loader对js进行兼容性配置还需要core-js?
 在Webpack 5中，使用babel-loader对JavaScript进行兼容性配置可以将新版本的JavaScript语法转换为低版本的语法，以便在旧版浏览器中正常运行。然而，babel-loader只会处理语法转换，而不会处理新增的API或全局对象。对于一些新的API（如Promise、Array.from等）或全局对象（如Symbol、Map等），我们仍然需要使用core-js来提供兼容性支持。
+
+
+## react-codemirror2
+一个开源的编辑器组件
+
+### 如何高度自适应
+1. 设置属性
+```js
+import {UnControlled as CodeMirror} from 'react-codemirror2';
+import 'codemirror/lib/codemirror.css';
+
+function MyComponent() {
+  return (
+    <CodeMirror
+      options={{
+        viewportMargin: Infinity,
+        lineNumbers: true
+      }}
+    />
+  );
+}
+```
+
+2. 设置样式
+```css
+.CodeMirror {
+   height: auto;
+}
+.CodeMirror-scroll {
+   overflow-y: hidden; 
+   overflow-x: auto;
+}
+```
