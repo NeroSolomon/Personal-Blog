@@ -94,3 +94,6 @@ function MyComponent() {
    overflow-x: auto;
 }
 ```
+
+### zustand
+基于local storage的状态管理工具
