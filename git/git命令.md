@@ -12,10 +12,10 @@
 git revert 168a2cd // 删除168a2cd的提交
 ```
 
-当某个commit是merge的时侯，直接git revert commitid会有问题，因为merge的时侯其实会生成三个commitid（可以使用git log查看），直接revert的话git不知道你需要revert哪个<br>
+当某个commit是merge的时侯，直接git revert commitid会有问题，因为merge的时侯其实会生成三个commitid（可以使用git log查看，其中两个为两个分支的parent id），直接revert的话git不知道你需要以哪个分支为主分支revert，[详情](https://www.cnblogs.com/bescheiden/articles/10563651.html)<br>
 所以需要
 ```
-git revert 168a2cd -m 1 // 删除168a2cd的提交下的第一个
+git revert 168a2cd -m 1 // 以第一条为主分支
 ```
 
 revert多个
