@@ -97,3 +97,8 @@ function MyComponent() {
 
 ### zustand
 基于local storage的状态管理工具
+
+### axios
+axios get方法默认对数据参数，会转换为param[]=xx&param[]=xx这种形式，如果需要转换成param=xx&param=xx这种形式，可以使用
+
+paramsSerializer: params => qs.stringify(params, { arrayFormat: 'repeat' })
