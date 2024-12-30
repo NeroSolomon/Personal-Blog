@@ -102,3 +102,36 @@ function MyComponent() {
 axios get方法默认对数据参数，会转换为param[]=xx&param[]=xx这种形式，如果需要转换成param=xx&param=xx这种形式，可以使用
 
 paramsSerializer: params => qs.stringify(params, { arrayFormat: 'repeat' })
+
+### ejs
+express的一个模版引擎
+
+### tailwindcss
+动态css包
+
+1. 安装tailwindcss
+npm install -D tailwindcss
+
+2. 在根目录中配置：tailwind.config.js
+
+```js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{html,js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+3. 在css文件中引入，注意：是css
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+4. 在tsx、jsx中引入此css
