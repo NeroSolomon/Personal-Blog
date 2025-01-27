@@ -52,3 +52,9 @@ componentDidCatch(error, info)，一个生命钩子函数，可以捕获当前�
 
 ### 封装hook来发送网络请求
 [参考链接](https://www.robinwieruch.de/react-hooks-fetch-data)
+
+### react和vue的区别
+1. react使用单向数据流，vue双向绑定，数据改变自动改动视图
+2. react all in js，vue 使用模板将html、js、css分开
+3. react其他功能需要安装依赖，例如redux、vue则内置vuex，而且vue提供了大量语法糖
+4. react依赖较多，vue更少，因为react某些设计更复杂，例如虚拟dom实现，所以体积更大
