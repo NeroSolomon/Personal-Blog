@@ -135,3 +135,7 @@ module.exports = {
 ```
 
 4. 在tsx、jsx中引入此css
+
+## worker_threads
+
+nodejs多线程
