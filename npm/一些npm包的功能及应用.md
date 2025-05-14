@@ -139,3 +139,6 @@ module.exports = {
 ## worker_threads
 
 nodejs多线程
+
+## husky
+用于pre commit时统一代码规范等操作
