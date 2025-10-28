@@ -58,3 +58,37 @@ componentDidCatch(error, info)，一个生命钩子函数，可以捕获当前�
 2. react all in js，vue 使用模板将html、js、css分开
 3. react其他功能需要安装依赖，例如redux、vue则内置vuex，而且vue提供了大量语法糖
 4. react依赖较多，vue更少，因为react某些设计更复杂，例如虚拟dom实现，所以体积更大
+
+### useEffect和useLayoutEffect的区别
+
+1. useEffect 是异步执行的，而useLayoutEffect是同步执行的。
+2. useEffect 的执行时机是浏览器完成渲染之后，而 useLayoutEffect 的执行时机是浏览器把内容真正渲染到界面之前，和 componentDidMount 等价。
+
+简单例子：
+
+```js
+  // 如果这里用useEffect，会导致文本集合还未在页面中消失时，就将topTabActiveKey改动，导致动画效果闪动
+  useLayoutEffect(() => {
+    setTopTabActiveKey("listKey");
+  }, [fileFilterType]);
+
+  const tabsItems: TabsProps["items"] = useMemo(() => {
+    return [
+      {
+        key: "listKey",
+        label: "文件列表",
+        children: renderFileListContent(),
+      },
+      ...(fileFilterType === FileFilterType.flod
+        ? [
+            {
+              key: "textSetKey",
+              label: "文本集合",
+              children: renderTextSetContent(),
+            },
+          ]
+        : []),
+    ];
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [fileFilterType]);
+```
