@@ -116,6 +116,11 @@ class HuaweiPhone extends Phone {
     //   - 如果拼错方法名，编译器会直接报错，帮你发现问题
     //   - 不写的话，拼错了就成了一个新方法，父类方法没被覆盖，bug 就埋下了
     //   - @Override 不管父方法是 abstract 还是普通方法，都建议加上
+    //
+    // 注意：static 方法不能被 @Override，只能被"隐藏"(hide)
+    //   - static 方法不参与多态：Parent p = new Child(); p.staticMethod() → 走父类版本
+    //   - 因为 static 方法在编译时就绑定了，看的是引用类型，不是实际对象
+    //   - 如果子类写同名 static 方法，不报错，但只是"藏"了父类的，不能 @Override
     @Override
     public void call(String number) {
         System.out.println("📞 [华为] 正在通过 4G/5G 拨打 " + number + " ...");
