@@ -74,6 +74,182 @@ public class JavaCollectionFrameworkDemo {
         System.out.println("    Hashtable→ 所有方法 synchronized，锁太粗");
 
         // ============================================================
+        //  Q2.5: 为什么某些集合线程不安全？（根本原因 + 实测）
+        // ============================================================
+        System.out.println("\n┌─────────────────────────────────────────────────────────┐");
+        System.out.println("│ Q2.5: 为什么某些集合线程不安全？（根本原因）            │");
+        System.out.println("└─────────────────────────────────────────────────────────┘");
+
+        System.out.println("\n  总原则：线程不安全 = 没有同步保护，多线程并发操作时出现数据错乱。");
+        System.out.println("  本质就三类问题：数据覆盖丢失 / 死循环 / 读到脏数据。");
+        System.out.println();
+
+        // --- ArrayList 为什么不安全 ---
+        System.out.println("  ─── ① ArrayList 为什么线程不安全？ ───");
+        System.out.println();
+        System.out.println("    ArrayList 底层是 Object[] elementData，add 的源码：");
+        System.out.println("      public boolean add(E e) {");
+        System.out.println("          elementData[size++] = e;   ← 这一行不是原子的！");
+        System.out.println("          return true;");
+        System.out.println("      }");
+        System.out.println();
+        System.out.println("    「elementData[size++] = e」分三步：");
+        System.out.println("      ① 读取 size 的当前值");
+        System.out.println("      ② 把 e 放到 elementData[size]");
+        System.out.println("      ③ size + 1");
+        System.out.println();
+        System.out.println("    如果两个线程同时 add，可能出现：");
+        System.out.println("      线程A 读到 size=0 → 把数据放到 [0] → 还没来得及加1");
+        System.out.println("      线程B 也读到 size=0 → 把数据也放到 [0]！→ A 的数据被覆盖！");
+        System.out.println("      size 只加了 1，但丢了 1 个元素。");
+        System.out.println();
+
+        // 实测演示
+        System.out.println("    [实测] 10 个线程各向同一个 ArrayList add 1000 次：");
+        List<String> unsafeList = new ArrayList<>();
+        CountDownLatch latch1 = new CountDownLatch(10);
+        for (int i = 0; i < 10; i++) {
+            new Thread(() -> {
+                for (int j = 0; j < 1000; j++) {
+                    unsafeList.add("x");
+                }
+                latch1.countDown();
+            }).start();
+        }
+        try { latch1.await(); } catch (Exception e) {}
+        System.out.println("    期望 10000 个，实际: " + unsafeList.size()
+                           + " → 丢数据了！这就是线程不安全！");
+        System.out.println("    严重时甚至抛 ArrayIndexOutOfBoundsException（size 错乱）。");
+        System.out.println();
+
+        // --- HashMap 为什么不安全 ---
+        System.out.println("  ─── ② HashMap 为什么线程不安全？ ───");
+        System.out.println();
+        System.out.println("    JDK 7：扩容时采用头插法，多线程扩容可能形成循环链表 →");
+        System.out.println("            get() 时 CPU 100% 死循环（经典 bug）。");
+        System.out.println();
+        System.out.println("    JDK 8：改为尾插法，解决了死循环。但数据覆盖问题依然存在：");
+        System.out.println("      put 方法里没有同步，两个线程同时 put 同一个桶：");
+        System.out.println("        线程A 计算桶下标 → 找到桶 → 刚要写，CPU 切换走");
+        System.out.println("        线程B 也找到同一个桶 → 写入 → 走人");
+        System.out.println("        线程A 切回来 → 把 B 的数据覆盖了！→ 丢数据");
+        System.out.println("      同时，size++ 也是非原子的，可能计数不准确。");
+        System.out.println();
+
+        // 实测演示
+        System.out.println("    [实测] 10 个线程各向 HashMap put 1000 次：");
+        HashMap<String, Integer> unsafeMap = new HashMap<>();
+        CountDownLatch latch2 = new CountDownLatch(10);
+        for (int i = 0; i < 10; i++) {
+            final int threadId = i;
+            new Thread(() -> {
+                for (int j = 0; j < 1000; j++) {
+                    unsafeMap.put(threadId + "-" + j, j);
+                }
+                latch2.countDown();
+            }).start();
+        }
+        try { latch2.await(); } catch (Exception e) {}
+        System.out.println("    期望 10000 个，实际: " + unsafeMap.size()
+                           + " → 丢数据了！这就是线程不安全！");
+        System.out.println();
+
+        // --- LinkedList 为什么不安全 ---
+        System.out.println("  ─── ③ LinkedList 为什么线程不安全？ ───");
+        System.out.println();
+        System.out.println("    LinkedList 是双向链表，add 时需要同时改前驱的 next 和后继的 prev。");
+        System.out.println("    两个线程同时 add，一个刚改了前驱的 next，另一个也改了前驱的 next");
+        System.out.println("    → 链表断裂，后续遍历可能 null.f() 抛异常。");
+        System.out.println();
+
+        // --- HashSet 为什么不安全 ---
+        System.out.println("  ─── ④ HashSet 为什么线程不安全？ ───");
+        System.out.println();
+        System.out.println("    HashSet 底层就是 HashMap（add ≡ map.put(e, PRESENT)），");
+        System.out.println("    HashMap 不安全 → HashSet 也不安全，继承性危险。");
+        System.out.println();
+
+        // --- 一句话总结 ---
+        System.out.println("  ═══════════════════════════════════════════");
+        System.out.println("  总结：线程不安全的根因");
+        System.out.println("  ═══════════════════════════════════════════");
+        System.out.println("    ① 方法没有 synchronized / CAS 保护（如 HashMap.put）");
+        System.out.println("    ② 复合操作不是原子的（如 ArrayList 的 size++）");
+        System.out.println("    ③ 读-改-写 不是原子的（先读 size 再改 size）");
+        System.out.println("    ④ 扩容期间数据结构不一致（链表被别的线程打断）");
+        System.out.println("    ⑤ 线程间不可见（一个线程改了 size，另一个看不见）");
+
+        // ============================================================
+        //  Q2.6: 什么是 JUC 并发容器？
+        // ============================================================
+        System.out.println("\n┌─────────────────────────────────────────────────────────┐");
+        System.out.println("│ Q2.6: 什么是 JUC 并发容器？                              │");
+        System.out.println("└─────────────────────────────────────────────────────────┘");
+
+        System.out.println();
+        System.out.println("  JUC = java.util.concurrent 包，是 JDK 1.5 引入的并发工具包。");
+        System.out.println("  JUC 并发容器 = 这个包里所有线程安全的集合类。");
+        System.out.println();
+        System.out.println("  ─── 为什么要单独搞一套？ ───");
+        System.out.println("    老方案 Vector/Hashtable → 所有方法加 synchronized(全表锁)");
+        System.out.println("    → 读也锁、写也锁，高并发下性能太差，不如重新设计。");
+        System.out.println("    → JUC 用 CAS、分段锁、写时复制等更高级的技术来搞。");
+        System.out.println();
+        System.out.println("  ─── JUC 并发容器全家福 ───");
+        System.out.println();
+        System.out.println("  ┌────────────────────────────────────────────────────────┐");
+        System.out.println("  │ Map 类                                                 │");
+        System.out.println("  ├────────────────────────────────────────────────────────┤");
+        System.out.println("  │ ConcurrentHashMap  桶级锁(CAS+synchronized)，读无锁    │");
+        System.out.println("  │ ConcurrentSkipListMap  跳表，高并发下 key 有序存储     │");
+        System.out.println("  ├────────────────────────────────────────────────────────┤");
+        System.out.println("  │ List 类                                                │");
+        System.out.println("  ├────────────────────────────────────────────────────────┤");
+        System.out.println("  │ CopyOnWriteArrayList  写时复制，读全无锁，适合读多写少 │");
+        System.out.println("  ├────────────────────────────────────────────────────────┤");
+        System.out.println("  │ Set 类                                                 │");
+        System.out.println("  ├────────────────────────────────────────────────────────┤");
+        System.out.println("  │ CopyOnWriteArraySet   底层就是 CopyOnWriteArrayList    │");
+        System.out.println("  │ ConcurrentSkipListSet 底层就是 ConcurrentSkipListMap   │");
+        System.out.println("  ├────────────────────────────────────────────────────────┤");
+        System.out.println("  │ Queue 类                                               │");
+        System.out.println("  ├────────────────────────────────────────────────────────┤");
+        System.out.println("  │ ArrayBlockingQueue    有界数组阻塞队列                 │");
+        System.out.println("  │ LinkedBlockingQueue   可选有界链表阻塞队列             │");
+        System.out.println("  │ PriorityBlockingQueue 无界优先级阻塞队列               │");
+        System.out.println("  │ SynchronousQueue      不存任务，直接交接               │");
+        System.out.println("  │ DelayQueue           延迟队列（定时任务）              │");
+        System.out.println("  │ ConcurrentLinkedQueue 非阻塞的无锁队列（CAS）          │");
+        System.out.println("  ├────────────────────────────────────────────────────────┤");
+        System.out.println("  │ Deque 类                                               │");
+        System.out.println("  ├────────────────────────────────────────────────────────┤");
+        System.out.println("  │ LinkedBlockingDeque   双端阻塞队列                     │");
+        System.out.println("  │ ConcurrentLinkedDeque 非阻塞双端无锁队列               │");
+        System.out.println("  └────────────────────────────────────────────────────────┘");
+
+        System.out.println();
+        System.out.println("  ─── 选型口诀 ───");
+        System.out.println("    Map 要线程安全       → ConcurrentHashMap（别用 Hashtable）");
+        System.out.println("    List 读多写极少       → CopyOnWriteArrayList（读零开销）");
+        System.out.println("    List 读写都频繁       → Collections.synchronizedList");
+        System.out.println("    Queue 要阻塞         → BlockingQueue（生产者消费者）");
+        System.out.println("    Queue 高性能无锁      → ConcurrentLinkedQueue");
+        System.out.println();
+
+        // --- 核心原理对比 ---
+        System.out.println("  ─── 核心技术对比 ───");
+        System.out.println();
+        System.out.println("  ┌──────────────────────┬──────────────┬──────────────────┐");
+        System.out.println("  │ 技术                 │ 代表容器     │ 一句话            │");
+        System.out.println("  ├──────────────────────┼──────────────┼──────────────────┤");
+        System.out.println("  │ 全表 synchronized    │ Vector       │ 读写全锁，性能最差│");
+        System.out.println("  │ 分段锁 Segment       │ CHM(JDK7)    │ 16 把锁各管一片   │");
+        System.out.println("  │ 桶锁 CAS+synchronized│ CHM(JDK8)    │ 锁到桶级，读无锁  │");
+        System.out.println("  │ 写时复制 CopyOnWrite │ COWList      │ 写时复制全数组    │");
+        System.out.println("  │ 无锁 CAS            │ ConcurrentLQ │ 纯 CAS，零锁      │");
+        System.out.println("  └──────────────────────┴──────────────┴──────────────────┘");
+
+        // ============================================================
         //  Q3: HashSet vs LinkedHashSet vs TreeSet
         // ============================================================
         System.out.println("\n┌─────────────────────────────────────────────────────────┐");
